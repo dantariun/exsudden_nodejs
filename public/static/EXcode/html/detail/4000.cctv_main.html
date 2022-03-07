@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCTV main</title>
+    <script src="../../lib/js/jQuery1.7.min.js"></script>
+    <script src="../../lib/js/plugin/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <link rel="stylesheet" href="../../lib/js/plugin/mCustomScrollbar/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="../../lib/css/reset.css">
+    <link rel="stylesheet" href="../../lib/css/fonts.css">
+    <link rel="stylesheet" href="../../lib/css/common.css">
+    <link rel="stylesheet" href="../../lib/css/style.css">
+</head>
+<body>
+    <div class="wrap">
+       <!-- header -->
+        <header class="header">
+
+           <div class="inner">
+               
+                <h1 class="logo">
+                    <img src="../../static/images/ic_logo.png" alt="">
+                </h1>
+
+                <div class="hd_right">
+
+                    <div class="input_box">
+                        <select name="" id="" class="select select_lg">
+                            <option value="">서울청</option>
+                            <option value="">경기청</option>
+                        </select>
+                    </div>    
+
+                    <span class="user_name">홍길동님</span>
+
+                    <div class="input_box">
+                        <button class="btn btn_sm btn_secondary">로그아웃</button>
+                    </div>    
+                </div>
+
+            </div>
+       </header> 
+       <!-- // header -->
+
+       <!-- left_nav -->
+       <aside class="left_nav">
+
+           <nav>
+                <div class="nav_box left_box">
+                    <a href="javascript:void(0)" class="nav_item"><img src="../../static/images/ic_dashboard.png" alt=""></a>
+                    <a href="javascript:void(0)" class="nav_item"><img src="../../static/images/ic_event.png" alt=""></a>
+                    <a href="javascript:void(0)" class="nav_item"><img src="../../static/images/ic_circle.png" alt=""></a>
+                    <a href="javascript:void(0)" class="nav_item"><img src="../../static/images/ic_cctv.png" alt=""></a>
+                    <a href="javascript:void(0)" class="nav_item"><img src="../../static/images/ic_assignment.png" alt=""></a>
+                    <a href="javascript:void(0)" class="nav_item"><img src="../../static/images/ic_settings.png" alt=""></a>
+                </div>
+                <!-- 현재 진입해있는 페이지의 menu_box > nav_item에 클래스명 active  -->
+                <div class="nav_box menu_box">
+                    <a href="javascript:void(0)" class="nav_item">현황판</a>
+                    <a href="javascript:void(0)" class="nav_item">이벤트</a>
+                    <a href="javascript:void(0)" class="nav_item">통계</a>
+                    <a href="javascript:void(0)" class="nav_item active">CCTV</a>
+                    <a href="javascript:void(0)" class="nav_item">이력</a>
+                    <a href="javascript:void(0)" class="nav_item">설정</a>
+                </div>
+           </nav>
+
+       </aside>
+       <!-- // left_nav -->
+
+       <!-- container -->
+       <div class="container cctv">
+
+           <div class="inner">
+                <h2 class="page_title">CCTV 관리</h2>
+
+                <!-- content_box -->
+                <div class="content_box">
+
+                    <!-- input 요소를 가로로 배치할 경우 아래와 같이 사용합니다. -->
+                    <!-- input_group -->
+                    <div class="input_group">
+                        <div class="input_box mr30">
+                            <select name="" id="" class="select">
+                                <option value="">CCTV ID</option>
+                            </select>
+                        </div>
+                        <div class="input_box mr30">
+                            <select name="" id="" class="select">
+                                <option value="">환경요소</option>
+                            </select>
+                        </div>
+                        <div class="input_box mr30">
+                            <select name="" id="" class="select">
+                                <option value="">세부항목</option>
+                            </select>
+                        </div>
+                        <div class="input_box mr30">
+                            <select name="" id="" class="select">
+                                <option value="">수신상태</option>
+                            </select>
+                        </div>
+                        <div class="input_box mr6">
+                            <select name="" id="" class="select">
+                                <option value="">알람상태</option>
+                            </select>
+                        </div>
+                        <div class="input_box mr6">
+                            <button class="btn btn_lg btn_primary btn_lg_txt">
+                                <img src="../../static/images/ic_search.png" alt="" class="ic_search">
+                                검색
+                            </button>
+                        </div>
+                        <div class="input_box">
+                            <button class="btn btn_lg btn_red btn_lg_txt">일괄알람설정</button>
+                        </div>
+                    </div>
+                    <!-- // input_group -->
+
+                    <!-- table -->
+                    <!-- 헤더 고정 테이블인 경우 아래와 같이 사용해주세요. -->
+                    <div class="fixed_table_box txt_r">
+                        <div class="input_box dis_ib mt30 mb10">
+                            <button class="btn btn_lg btn_lg_txt btn_secondary">알람OFF 스케줄</button>
+                        </div>
+                        <div class="table_hd">
+                            <!-- 헤더고정 테이블의 경우 헤더와 바디 두개의 테이블의 colgroup 선언을 동일하게 해주세요. -->
+                            <table>
+                                <colgroup>
+                                    <col class="w12p">
+                                    <col class="w12p">
+                                    <col class="w8p">
+                                    <col class="w10p">
+                                    <col class="w10p">
+                                    <col class="w8p">
+                                    <col class="w8p">
+                                    <col class="w8p">
+                                    <col class="w8p">
+                                    <col class="w8p">
+                                    <col class="w8p">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <span>CCTV ID</span>
+                                            <div class="input_box sort_box">
+                                                <button class="btn_sort"><img src="../../static/images/ic_arrow_up_wh.png" alt=""></button>
+                                                <button class="btn_sort"><img src="../../static/images/ic_arrow_down_wh.png" alt=""></button>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span>설치위치</span>
+                                            <div class="input_box sort_box">
+                                                <button class="btn_sort"><img src="../../static/images/ic_arrow_up_wh.png" alt=""></button>
+                                                <!-- <button class="btn_sort"><img src="../../static/images/ic_arrow_down_wh.png" alt=""></button> -->
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span>화질</span>
+                                            <div class="input_box sort_box">
+                                                <button class="btn_sort"><img src="../../static/images/ic_arrow_up_wh.png" alt=""></button>
+                                                <!-- <button class="btn_sort"><img src="../../static/images/ic_arrow_down_wh.png" alt=""></button> -->
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span>사용여부</span>
+                                            <div class="input_box sort_box">
+                                                <button class="btn_sort"><img src="../../static/images/ic_arrow_up_wh.png" alt=""></button>
+                                                <!-- <button class="btn_sort"><img src="../../static/images/ic_arrow_down_wh.png" alt=""></button> -->
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span>설치일시</span>
+                                            <div class="input_box sort_box">
+                                                <button class="btn_sort"><img src="../../static/images/ic_arrow_up_wh.png" alt=""></button>
+                                                <!-- <button class="btn_sort"><img src="../../static/images/ic_arrow_down_wh.png" alt=""></button> -->
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span>검지방향</span>
+                                            <div class="input_box sort_box">
+                                                <button class="btn_sort"><img src="../../static/images/ic_arrow_up_wh.png" alt=""></button>
+                                                <!-- <button class="btn_sort"><img src="../../static/images/ic_arrow_down_wh.png" alt=""></button> -->
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span>수신상태</span>
+                                            <div class="input_box sort_box">
+                                                <button class="btn_sort"><img src="../../static/images/ic_arrow_up_wh.png" alt=""></button>
+                                                <!-- <button class="btn_sort"><img src="../../static/images/ic_arrow_down_wh.png" alt=""></button> -->
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span>이벤트수</span>
+                                            <div class="input_box sort_box">
+                                                <button class="btn_sort"><img src="../../static/images/ic_arrow_up_wh.png" alt=""></button>
+                                                <!-- <button class="btn_sort"><img src="../../static/images/ic_arrow_down_wh.png" alt=""></button> -->
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span>알람상태</span>
+                                            <div class="input_box sort_box">
+                                                <button class="btn_sort"><img src="../../static/images/ic_arrow_up_wh.png" alt=""></button>
+                                                <!-- <button class="btn_sort"><img src="../../static/images/ic_arrow_down_wh.png" alt=""></button> -->
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span>검지여부</span>
+                                            <div class="input_box sort_box">
+                                                <button class="btn_sort"><img src="../../static/images/ic_arrow_up_wh.png" alt=""></button>
+                                                <!-- <button class="btn_sort"><img src="../../static/images/ic_arrow_down_wh.png" alt=""></button> -->
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span>이벤트등록</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                        <div class="table_bd scroll_box">
+
+                            <table>
+                                <colgroup>
+                                    <col class="w12p">
+                                    <col class="w12p">
+                                    <col class="w8p">
+                                    <col class="w10p">
+                                    <col class="w10p">
+                                    <col class="w8p">
+                                    <col class="w8p">
+                                    <col class="w8p">
+                                    <col class="w8p">
+                                    <col class="w8p">
+                                    <col class="w8p">
+                                </colgroup>
+                                <tbody>
+
+                                    <tr>
+                                        <td>
+                                            <span>1235123567890123</span>
+                                        </td>
+                                        <td>
+                                            <span>[국도4] 용천원동리</span>
+                                        </td>
+                                        <td>
+                                            <span>FHD</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>00-00 00:00:00</span>
+                                        </td>
+                                        <td>
+                                            <span>정방향</span>
+                                        </td>
+                                        <td>
+                                            <span>정상</span>
+                                        </td>
+                                        <td>
+                                            <span>1</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <div class="input_box">
+                                                    <button class="dis_ib btn btn_md btn_secondary">관리</button>
+                                                </div>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span>1235123567890123</span>
+                                        </td>
+                                        <td>
+                                            <span>[국도4] 용천원동리</span>
+                                        </td>
+                                        <td>
+                                            <span>HD</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>00-00 00:00:00</span>
+                                        </td>
+                                        <td>
+                                            <span>역방향</span>
+                                        </td>
+                                        <td>
+                                            <span>미작동</span>
+                                        </td>
+                                        <td>
+                                            <span>25</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <div class="input_box txt_c">
+                                                    <button class="dis_ib btn btn_md btn_secondary">관리</button>
+                                                </div>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span>1235123567890123</span>
+                                        </td>
+                                        <td>
+                                            <span>[국도4] 용천원동리</span>
+                                        </td>
+                                        <td>
+                                            <span>HD</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>00-00 00:00:00</span>
+                                        </td>
+                                        <td>
+                                            <span>정방향</span>
+                                        </td>
+                                        <td>
+                                            <span>정상</span>
+                                        </td>
+                                        <td>
+                                            <span>1</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <div class="input_box">
+                                                    <button class="dis_ib btn btn_md btn_secondary">관리</button>
+                                                </div>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span>1235123567890123</span>
+                                        </td>
+                                        <td>
+                                            <span>[국도4] 용천원동리</span>
+                                        </td>
+                                        <td>
+                                            <span>FHD</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>00-00 00:00:00</span>
+                                        </td>
+                                        <td>
+                                            <span>역방향</span>
+                                        </td>
+                                        <td>
+                                            <span>정상</span>
+                                        </td>
+                                        <td>
+                                            <span>1</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <div class="input_box">
+                                                    <button class="dis_ib btn btn_md btn_secondary">관리</button>
+                                                </div>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span>1235123567890123</span>
+                                        </td>
+                                        <td>
+                                            <span>[국도4] 용천원동리</span>
+                                        </td>
+                                        <td>
+                                            <span>HD</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>00-00 00:00:00</span>
+                                        </td>
+                                        <td>
+                                            <span>정방향</span>
+                                        </td>
+                                        <td>
+                                            <span>정상</span>
+                                        </td>
+                                        <td>
+                                            <span>20</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <div class="input_box">
+                                                    <button class="dis_ib btn btn_md btn_secondary">관리</button>
+                                                </div>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span>1235123567890123</span>
+                                        </td>
+                                        <td>
+                                            <span>[국도4] 용천원동리</span>
+                                        </td>
+                                        <td>
+                                            <span>FHD</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>00-00 00:00:00</span>
+                                        </td>
+                                        <td>
+                                            <span>역방향</span>
+                                        </td>
+                                        <td>
+                                            <span>정상</span>
+                                        </td>
+                                        <td>
+                                            <span>16</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <div class="input_box">
+                                                    <button class="dis_ib btn btn_md btn_secondary">관리</button>
+                                                </div>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span>1235123567890123</span>
+                                        </td>
+                                        <td>
+                                            <span>[국도4] 용천원동리</span>
+                                        </td>
+                                        <td>
+                                            <span>HD</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>00-00 00:00:00</span>
+                                        </td>
+                                        <td>
+                                            <span>정방향</span>
+                                        </td>
+                                        <td>
+                                            <span>정상</span>
+                                        </td>
+                                        <td>
+                                            <span>12</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <div class="input_box">
+                                                    <button class="dis_ib btn btn_md btn_secondary">관리</button>
+                                                </div>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span>1235123567890123</span>
+                                        </td>
+                                        <td>
+                                            <span>[국도4] 용천원동리</span>
+                                        </td>
+                                        <td>
+                                            <span>HD</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>00-00 00:00:00</span>
+                                        </td>
+                                        <td>
+                                            <span>역방향</span>
+                                        </td>
+                                        <td>
+                                            <span>정상</span>
+                                        </td>
+                                        <td>
+                                            <span>8</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <div class="input_box">
+                                                    <button class="dis_ib btn btn_md btn_secondary">관리</button>
+                                                </div>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span>1235123567890123</span>
+                                        </td>
+                                        <td>
+                                            <span>[국도4] 용천원동리</span>
+                                        </td>
+                                        <td>
+                                            <span>FHD</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>00-00 00:00:00</span>
+                                        </td>
+                                        <td>
+                                            <span>정방향</span>
+                                        </td>
+                                        <td>
+                                            <span>정상</span>
+                                        </td>
+                                        <td>
+                                            <span>7</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <div class="input_box">
+                                                    <button class="dis_ib btn btn_md btn_secondary">관리</button>
+                                                </div>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span>1235123567890123</span>
+                                        </td>
+                                        <td>
+                                            <span>[국도4] 용천원동리</span>
+                                        </td>
+                                        <td>
+                                            <span>HD</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>00-00 00:00:00</span>
+                                        </td>
+                                        <td>
+                                            <span>역방향</span>
+                                        </td>
+                                        <td>
+                                            <span>정상</span>
+                                        </td>
+                                        <td>
+                                            <span>15</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <div class="input_box">
+                                                    <button class="dis_ib btn btn_md btn_secondary">관리</button>
+                                                </div>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span>1235123567890123</span>
+                                        </td>
+                                        <td>
+                                            <span>[국도4] 용천원동리</span>
+                                        </td>
+                                        <td>
+                                            <span>HD</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>00-00 00:00:00</span>
+                                        </td>
+                                        <td>
+                                            <span>정방향</span>
+                                        </td>
+                                        <td>
+                                            <span>정상</span>
+                                        </td>
+                                        <td>
+                                            <span>14</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <div class="input_box">
+                                                    <button class="dis_ib btn btn_md btn_secondary">관리</button>
+                                                </div>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span>1235123567890123</span>
+                                        </td>
+                                        <td>
+                                            <span>[국도4] 용천원동리</span>
+                                        </td>
+                                        <td>
+                                            <span>HD</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>00-00 00:00:00</span>
+                                        </td>
+                                        <td>
+                                            <span>역방향</span>
+                                        </td>
+                                        <td>
+                                            <span>정상</span>
+                                        </td>
+                                        <td>
+                                            <span>11</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <div class="input_box">
+                                                    <button class="dis_ib btn btn_md btn_secondary">관리</button>
+                                                </div>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span>1235123567890123</span>
+                                        </td>
+                                        <td>
+                                            <span>[국도4] 용천원동리</span>
+                                        </td>
+                                        <td>
+                                            <span>HD</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>00-00 00:00:00</span>
+                                        </td>
+                                        <td>
+                                            <span>정방향</span>
+                                        </td>
+                                        <td>
+                                            <span>정상</span>
+                                        </td>
+                                        <td>
+                                            <span>9</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <div class="input_box">
+                                                    <button class="dis_ib btn btn_md btn_secondary">관리</button>
+                                                </div>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span>1235123567890123</span>
+                                        </td>
+                                        <td>
+                                            <span>[국도4] 용천원동리</span>
+                                        </td>
+                                        <td>
+                                            <span>FHD</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>00-00 00:00:00</span>
+                                        </td>
+                                        <td>
+                                            <span>역방향</span>
+                                        </td>
+                                        <td>
+                                            <span>정상</span>
+                                        </td>
+                                        <td>
+                                            <span>10</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <div class="input_box">
+                                                    <button class="dis_ib btn btn_md btn_secondary">관리</button>
+                                                </div>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span>1235123567890123</span>
+                                        </td>
+                                        <td>
+                                            <span>[국도4] 용천원동리</span>
+                                        </td>
+                                        <td>
+                                            <span>FHD</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>00-00 00:00:00</span>
+                                        </td>
+                                        <td>
+                                            <span>정방향</span>
+                                        </td>
+                                        <td>
+                                            <span>정상</span>
+                                        </td>
+                                        <td>
+                                            <span>6</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <div class="input_box">
+                                                    <button class="dis_ib btn btn_md btn_secondary">관리</button>
+                                                </div>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span>1235123567890123</span>
+                                        </td>
+                                        <td>
+                                            <span>[국도4] 용천원동리</span>
+                                        </td>
+                                        <td>
+                                            <span>FHD</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>00-00 00:00:00</span>
+                                        </td>
+                                        <td>
+                                            <span>역방향</span>
+                                        </td>
+                                        <td>
+                                            <span>정상</span>
+                                        </td>
+                                        <td>
+                                            <span>12</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <div class="input_box">
+                                                    <button class="dis_ib btn btn_md btn_secondary">관리</button>
+                                                </div>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span>1235123567890123</span>
+                                        </td>
+                                        <td>
+                                            <span>[국도4] 용천원동리</span>
+                                        </td>
+                                        <td>
+                                            <span>HD</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>00-00 00:00:00</span>
+                                        </td>
+                                        <td>
+                                            <span>정방향</span>
+                                        </td>
+                                        <td>
+                                            <span>정상</span>
+                                        </td>
+                                        <td>
+                                            <span>3</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <div class="input_box">
+                                                    <button class="dis_ib btn btn_md btn_secondary">관리</button>
+                                                </div>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span>1235123567890123</span>
+                                        </td>
+                                        <td>
+                                            <span>[국도4] 용천원동리</span>
+                                        </td>
+                                        <td>
+                                            <span>FHD</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>00-00 00:00:00</span>
+                                        </td>
+                                        <td>
+                                            <span>역방향</span>
+                                        </td>
+                                        <td>
+                                            <span>정상</span>
+                                        </td>
+                                        <td>
+                                            <span>22</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <div class="input_box">
+                                                    <button class="dis_ib btn btn_md btn_secondary">관리</button>
+                                                </div>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span>1235123567890123</span>
+                                        </td>
+                                        <td>
+                                            <span>[국도4] 용천원동리</span>
+                                        </td>
+                                        <td>
+                                            <span>HD</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>00-00 00:00:00</span>
+                                        </td>
+                                        <td>
+                                            <span>정방향</span>
+                                        </td>
+                                        <td>
+                                            <span>정상</span>
+                                        </td>
+                                        <td>
+                                            <span>1</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <div class="input_box">
+                                                    <button class="dis_ib btn btn_md btn_secondary">관리</button>
+                                                </div>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span>1235123567890123</span>
+                                        </td>
+                                        <td>
+                                            <span>[국도4] 용천원동리</span>
+                                        </td>
+                                        <td>
+                                            <span>FHD</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>00-00 00:00:00</span>
+                                        </td>
+                                        <td>
+                                            <span>역방향</span>
+                                        </td>
+                                        <td>
+                                            <span>정상</span>
+                                        </td>
+                                        <td>
+                                            <span>1</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <div class="input_box">
+                                                    <button class="dis_ib btn btn_md btn_secondary">관리</button>
+                                                </div>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+
+                        </div>
+
+                    </div>
+                    <!-- // table -->
+
+                </div>
+                <!-- // content_box -->
+
+           </div>
+
+       </div>
+       <!-- container -->
+    </div>
+    <script>
+        (function($){
+            $(window).on("load",function(){
+                $(".scroll_box").mCustomScrollbar({
+                    theme : "minimal-dark"
+                });
+            });
+        })(jQuery);
+    </script>
+</body>
+</html>

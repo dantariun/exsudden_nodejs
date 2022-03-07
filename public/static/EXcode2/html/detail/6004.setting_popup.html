@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="../../lib/js/jQuery1.7.min.js"></script>
+    <script src="../../lib/js/plugin/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <link rel="stylesheet" href="../../lib/js/plugin/mCustomScrollbar/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="../../lib/css/reset.css">
+    <link rel="stylesheet" href="../../lib/css/fonts.css">
+    <link rel="stylesheet" href="../../lib/css/common.css">
+    <link rel="stylesheet" href="../../lib/css/style.css">
+</head>
+<body>
+    <div class="wrap">
+       <!-- header -->
+        <header class="header">
+
+           <div class="inner">
+               
+                <h1 class="logo">
+                    <img src="../../static/images/ic_logo.png" alt="">
+                </h1>
+
+                <div class="hd_right">
+
+                    <div class="input_box">
+                        <select name="" id="" class="select select_lg">
+                            <option value="">서울청</option>
+                            <option value="">경기청</option>
+                        </select>
+                    </div>    
+
+                    <span class="user_name">홍길동님</span>
+
+                    <div class="input_box">
+                        <button class="btn btn_sm btn_secondary">로그아웃</button>
+                    </div>    
+                </div>
+
+            </div>
+       </header> 
+       <!-- // header -->
+
+       <!-- left_nav -->
+       <aside class="left_nav">
+
+           <nav>
+                <div class="nav_box left_box">
+                    <a href="javascript:void(0)" class="nav_item"><img src="../../static/images/ic_dashboard.png" alt=""></a>
+                    <a href="javascript:void(0)" class="nav_item"><img src="../../static/images/ic_event.png" alt=""></a>
+                    <a href="javascript:void(0)" class="nav_item"><img src="../../static/images/ic_circle.png" alt=""></a>
+                    <a href="javascript:void(0)" class="nav_item"><img src="../../static/images/ic_cctv.png" alt=""></a>
+                    <a href="javascript:void(0)" class="nav_item"><img src="../../static/images/ic_assignment.png" alt=""></a>
+                    <a href="javascript:void(0)" class="nav_item"><img src="../../static/images/ic_settings.png" alt=""></a>
+                </div>
+                <!-- 현재 진입해있는 페이지의 menu_box > nav_item에 클래스명 active  -->
+                <div class="nav_box menu_box">
+                    <a href="javascript:void(0)" class="nav_item">현황판</a>
+                    <a href="javascript:void(0)" class="nav_item">이벤트</a>
+                    <a href="javascript:void(0)" class="nav_item">통계</a>
+                    <a href="javascript:void(0)" class="nav_item">CCTV</a>
+                    <a href="javascript:void(0)" class="nav_item">이력</a>
+                    <a href="javascript:void(0)" class="nav_item active">설정</a>
+                </div>
+           </nav>
+
+       </aside>
+       <!-- // left_nav -->
+
+       <!-- container -->
+       <div class="container setting">
+
+           <div class="inner">
+
+                <!-- tab_item 클릭시 active 클래스 토글되는 형태입니다 -->
+                <!-- tab_menu -->
+                <div class="tab_box type-a">
+                    <ul>
+                        <li class="tab_item"><span>야간시간대 설정</span></li>
+                        <li class="tab_item"><span>이벤트 항목 설정</span></li>
+                        <li class="tab_item active"><span>날씨정보 매핑</span></li>
+                    </ul>
+                </div>
+                <!-- //tab_menu -->
+
+                <!-- content_box -->
+                <div class="content_box weather">
+                    <div class="fixed_table_box">
+                        <div class="table_hd">
+                            <!-- 헤더고정 테이블의 경우 헤더와 바디 두개의 테이블의 colgroup 선언을 동일하게 해주세요. -->
+                            <table>
+                                <colgroup>
+                                    <col class="w50p">
+                                    <col class="w50p">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <span>설치위치</span>
+                                        </td>
+                                        <td>
+                                            <span>기상청 지역설정</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                        <div class="table_bd scroll_box">
+
+                            <table>
+                                <colgroup>
+                                    <col class="w50p">
+                                    <col class="w50p">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <span>[국도4] 용천원동리</span>
+                                            <div class="input_box">
+                                                <button class="btn btn_secondary btn_md">지역검색</button>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input_box">
+                                                <input type="text" class="input_txt">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span>[국도4] 용천원동리</span>
+                                            <div class="input_box">
+                                                <button class="btn btn_secondary btn_md">지역검색</button>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input_box">
+                                                <input type="text" class="input_txt">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span>[국도4] 용천원동리</span>
+                                            <div class="input_box">
+                                                <button class="btn btn_secondary btn_md">지역검색</button>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input_box">
+                                                <input type="text" class="input_txt">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span>[국도4] 용천원동리</span>
+                                            <div class="input_box">
+                                                <button class="btn btn_secondary btn_md">지역검색</button>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input_box">
+                                                <input type="text" class="input_txt">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span>[국도4] 용천원동리</span>
+                                            <div class="input_box">
+                                                <button class="btn btn_secondary btn_md">지역검색</button>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input_box">
+                                                <input type="text" class="input_txt">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span>[국도4] 용천원동리</span>
+                                            <div class="input_box">
+                                                <button class="btn btn_secondary btn_md">지역검색</button>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input_box">
+                                                <input type="text" class="input_txt">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span>[국도4] 용천원동리</span>
+                                            <div class="input_box">
+                                                <button class="btn btn_secondary btn_md">지역검색</button>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input_box">
+                                                <input type="text" class="input_txt">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span>[국도4] 용천원동리</span>
+                                            <div class="input_box">
+                                                <button class="btn btn_secondary btn_md">지역검색</button>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input_box">
+                                                <input type="text" class="input_txt">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+
+                    </div>
+                </div>
+                <!-- // content_box -->
+                <div class="input_box txt_c w100p">
+                    <button class="btn btn_smd btn_primary">설정 저장</button>
+                </div>
+           </div>
+
+       </div>
+       <!-- container -->
+        <!-- 팝업 -->
+        <div class="popup_wrap">
+
+            <!-- cctv 페이지 팝업내용 이기 때문에 popup_box, cctv_popup_box 동시사용 -->
+            <div class="popup_box setting_popup">
+
+                <div class="popup_hd">
+
+                    <h3 class="pop_title">지역관리</h3>
+
+                    <a href="javascript:void(0)" class="btn_pop_close"><img src="../../static/images/ic_close.png" alt=""></a>
+
+                </div>
+
+                <div class="popup_bd">
+
+                    <div class="fixed_table_box">
+                        <div class="table_hd">
+                            <!-- 헤더고정 테이블의 경우 헤더와 바디 두개의 테이블의 colgroup 선언을 동일하게 해주세요. -->
+                            <table>
+                                <colgroup>
+                                    <col class="w100p">
+                                </colgroup>
+                                <tbody>
+
+                                    <tr>
+                                        <td><span>기상청 지역 검색결과</span></td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                        <div class="table_bd scroll_box">
+
+                            <table>
+                                <colgroup>
+                                    <col class="w100p">
+                                </colgroup>
+                                <tbody>
+
+                                    <tr>
+                                        <td>
+                                            <span>충북 청원군 월계면 1리</span>
+                                            <label class="input_box radio_box">
+                                                <input type="radio">
+                                                <span></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span>충북 청원군 월계면 2리</span>
+                                            <label class="input_box radio_box">
+                                                <input type="radio">
+                                                <span></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span>충북 청원군 월계면 3리</span>
+                                            <label class="input_box radio_box">
+                                                <input type="radio">
+                                                <span></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span>충북 청원군 월계면 4리</span>
+                                            <label class="input_box radio_box">
+                                                <input type="radio">
+                                                <span></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span>충북 청원군 월계면 5리</span>
+                                            <label class="input_box radio_box">
+                                                <input type="radio">
+                                                <span></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span>충북 청원군 월계면 6리</span>
+                                            <label class="input_box radio_box">
+                                                <input type="radio">
+                                                <span></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span>충북 청원군 월계면 7리</span>
+                                            <label class="input_box radio_box">
+                                                <input type="radio">
+                                                <span></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span class="no_result">걸과없음</span>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                            
+                        <div class="input_box txt_c mt18">
+                            <button class="btn btn_md btn_primary dis_ib">확인</button>
+                            <button class="btn btn_md btn_primary_outline dis_ib">취소</button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <!-- // 팝업 -->
+       <!-- alert 은 popup 보다 위에 떠있는 형태입니다. (z-index가 더 높음) -->
+        <!-- alert -->
+        <div class="alert_wrap hidden">
+            <div class="alert_box">
+                <div class="alert_hd">
+                    <p class="alert_title">확인</p>
+                    <a href="javascript:void(0)" class="btn_alert_close"><img src="../../static/images/ic_close.png" alt=""></a>
+                </div>
+                <div class="alert_bd">
+                    <div class="alert_desc_box">
+                        <p>저장하시겠습니까?</p>
+                        <div class="input_box">
+                            <!-- 버튼의 수에 따라 button 태그를 늘리고 줄이시면 됩니다. -->
+                            <button class="btn btn_primary btn_smd">확인</button>
+                            <button class="btn btn_primary_outline btn_smd">취소</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="alert_wrap hidden">
+            <div class="alert_box">
+                <div class="alert_hd">
+                    <p class="alert_title">확인</p>
+                    <a href="javascript:void(0)" class="btn_alert_close"><img src="../../static/images/ic_close.png" alt=""></a>
+                </div>
+                <div class="alert_bd">
+                    <div class="alert_desc_box">
+                        <p>저장되었습니다.</p>
+                        <div class="input_box">
+                            <!-- 버튼의 수에 따라 button 태그를 늘리고 줄이시면 됩니다. -->
+                            <button class="btn btn_primary btn_smd">확인</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //alert -->
+    </div>
+    <script>
+        (function($){
+            $(window).on("load",function(){
+                $(".fixed_table_box .table_bd").mCustomScrollbar({
+                    theme : "minimal-dark"
+                });
+            });
+        })(jQuery);
+    </script>
+</body>
+</html>

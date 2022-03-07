@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="../../lib/js/jQuery1.7.min.js"></script>
+    <script src="../../lib/js/plugin/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <link rel="stylesheet" href="../../lib/js/plugin/mCustomScrollbar/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="../../lib/css/reset.css">
+    <link rel="stylesheet" href="../../lib/css/fonts.css">
+    <link rel="stylesheet" href="../../lib/css/common.css">
+    <link rel="stylesheet" href="../../lib/css/style.css">
+</head>
+<body>
+    <div class="wrap">
+       <!-- header -->
+        <header class="header">
+
+           <div class="inner">
+               
+                <h1 class="logo">
+                    <img src="../../static/images/ic_logo.png" alt="">
+                </h1>
+
+                <div class="hd_right">
+
+                    <div class="input_box">
+                        <select name="" id="" class="select select_lg">
+                            <option value="">서울청</option>
+                            <option value="">경기청</option>
+                        </select>
+                    </div>    
+
+                    <span class="user_name">홍길동님</span>
+
+                    <div class="input_box">
+                        <button class="btn btn_sm btn_secondary">로그아웃</button>
+                    </div>    
+                </div>
+
+            </div>
+       </header> 
+       <!-- // header -->
+
+       <!-- left_nav -->
+       <aside class="left_nav">
+
+           <nav>
+                <div class="nav_box left_box">
+                    <a href="javascript:void(0)" class="nav_item"><img src="../../static/images/ic_dashboard.png" alt=""></a>
+                    <a href="javascript:void(0)" class="nav_item"><img src="../../static/images/ic_event.png" alt=""></a>
+                    <a href="javascript:void(0)" class="nav_item"><img src="../../static/images/ic_circle.png" alt=""></a>
+                    <a href="javascript:void(0)" class="nav_item"><img src="../../static/images/ic_cctv.png" alt=""></a>
+                    <a href="javascript:void(0)" class="nav_item"><img src="../../static/images/ic_assignment.png" alt=""></a>
+                    <a href="javascript:void(0)" class="nav_item"><img src="../../static/images/ic_settings.png" alt=""></a>
+                </div>
+                <!-- 현재 진입해있는 페이지의 menu_box > nav_item에 클래스명 active  -->
+                <div class="nav_box menu_box">
+                    <a href="javascript:void(0)" class="nav_item">현황판</a>
+                    <a href="javascript:void(0)" class="nav_item">이벤트</a>
+                    <a href="javascript:void(0)" class="nav_item">통계</a>
+                    <a href="javascript:void(0)" class="nav_item">CCTV</a>
+                    <a href="javascript:void(0)" class="nav_item">이력</a>
+                    <a href="javascript:void(0)" class="nav_item active">설정</a>
+                </div>
+           </nav>
+
+       </aside>
+       <!-- // left_nav -->
+
+       <!-- container -->
+       <div class="container setting">
+
+           <div class="inner">
+
+                <!-- tab_item 클릭시 active 클래스 토글되는 형태입니다 -->
+                <!-- tab_menu -->
+                <div class="tab_box type-a">
+                    <ul>
+                        <li class="tab_item active"><span>야간시간대 설정</span></li>
+                        <li class="tab_item"><span>이벤트 항목 설정</span></li>
+                        <li class="tab_item"><span>날씨정보 매핑</span></li>
+                    </ul>
+                </div>
+                <!-- //tab_menu -->
+
+                <!-- content_box left -->
+                <div class="content_box left w50p">
+
+                    <div class="content_row setting_time">
+                        <div class="content_item">
+                            <h5 class="content_item_tit">1월</h5>
+                            <div class="dis_ib sunset">
+                                <span class="content_item_txt">일몰시간</span>
+                                <div class="input_box">
+                                    <select name="" id="" class="select">
+                                        <option value="">18시</option>
+                                    </select>
+                                </div>
+                                <div class="input_box">
+                                    <select name="" id="" class="select">
+                                        <option value="">30분</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="dis_ib sunrise">
+                                <span class="content_item_txt">일출시간</span>
+                                <div class="input_box">
+                                    <select name="" id="" class="select">
+                                        <option value="">06시</option>
+                                    </select>
+                                </div>
+                                <div class="input_box">
+                                    <select name="" id="" class="select">
+                                        <option value="">30분</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content_item">
+                            <h5 class="content_item_tit">2월</h5>
+                            <div class="dis_ib sunset">
+                                <span class="content_item_txt">일몰시간</span>
+                                <div class="input_box">
+                                    <select name="" id="" class="select">
+                                        <option value="">18시</option>
+                                    </select>
+                                </div>
+                                <div class="input_box">
+                                    <select name="" id="" class="select">
+                                        <option value="">30분</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="dis_ib sunrise">
+                                <span class="content_item_txt">일출시간</span>
+                                <div class="input_box">
+                                    <select name="" id="" class="select">
+                                        <option value="">06시</option>
+                                    </select>
+                                </div>
+                                <div class="input_box">
+                                    <select name="" id="" class="select">
+                                        <option value="">30분</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content_item">
+                            <h5 class="content_item_tit">3월</h5>
+                            <div class="dis_ib sunset">
+                                <span class="content_item_txt">일몰시간</span>
+                                <div class="input_box">
+                                    <select name="" id="" class="select">
+                                        <option value="">18시</option>
+                                    </select>
+                                </div>
+                                <div class="input_box">
+                                    <select name="" id="" class="select">
+                                        <option value="">30분</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="dis_ib sunrise">
+                                <span class="content_item_txt">일출시간</span>
+                                <div class="input_box">
+                                    <select name="" id="" class="select">
+                                        <option value="">06시</option>
+                                    </select>
+                                </div>
+                                <div class="input_box">
+                                    <select name="" id="" class="select">
+                                        <option value="">30분</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content_item">
+                            <h5 class="content_item_tit">4월</h5>
+                            <div class="dis_ib sunset">
+                                <span class="content_item_txt">일몰시간</span>
+                                <div class="input_box">
+                                    <select name="" id="" class="select">
+                                        <option value="">18시</option>
+                                    </select>
+                                </div>
+                                <div class="input_box">
+                                    <select name="" id="" class="select">
+                                        <option value="">30분</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="dis_ib sunrise">
+                                <span class="content_item_txt">일출시간</span>
+                                <div class="input_box">
+                                    <select name="" id="" class="select">
+                                        <option value="">06시</option>
+                                    </select>
+                                </div>
+                                <div class="input_box">
+                                    <select name="" id="" class="select">
+                                        <option value="">30분</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content_item">
+                            <h5 class="content_item_tit">5월</h5>
+                            <div class="dis_ib sunset">
+                                <span class="content_item_txt">일몰시간</span>
+                                <div class="input_box">
+                                    <select name="" id="" class="select">
+                                        <option value="">18시</option>
+                                    </select>
+                                </div>
+                                <div class="input_box">
+                                    <select name="" id="" class="select">
+                                        <option value="">30분</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="dis_ib sunrise">
+                                <span class="content_item_txt">일출시간</span>
+                                <div class="input_box">
+                                    <select name="" id="" class="select">
+                                        <option value="">06시</option>
+                                    </select>
+                                </div>
+                                <div class="input_box">
+                                    <select name="" id="" class="select">
+                                        <option value="">30분</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content_item">
+                            <h5 class="content_item_tit">6월</h5>
+                            <div class="dis_ib sunset">
+                                <span class="content_item_txt">일몰시간</span>
+                                <div class="input_box">
+                                    <select name="" id="" class="select">
+                                        <option value="">18시</option>
+                                    </select>
+                                </div>
+                                <div class="input_box">
+                                    <select name="" id="" class="select">
+                                        <option value="">30분</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="dis_ib sunrise">
+                                <span class="content_item_txt">일출시간</span>
+                                <div class="input_box">
+                                    <select name="" id="" class="select">
+                                        <option value="">06시</option>
+                                    </select>
+                                </div>
+                                <div class="input_box">
+                                    <select name="" id="" class="select">
+                                        <option value="">30분</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- // content_box left -->
+
+                <!-- content_box right -->
+                <div class="content_box right w50p ml0">
+
+                    <div class="content_row setting_time">
+                        <div class="content_item">
+                            <h5 class="content_item_tit">7월</h5>
+                            <div class="dis_ib sunset">
+                                <span class="content_item_txt">일몰시간</span>
+                                <div class="input_box">
+                                    <select name="" id="" class="select">
+                                        <option value="">18시</option>
+                                    </select>
+                                </div>
+                                <div class="input_box">
+                                    <select name="" id="" class="select">
+                                        <option value="">30분</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="dis_ib sunrise">
+                                <span class="content_item_txt">일출시간</span>
+                                <div class="input_box">
+                                    <select name="" id="" class="select">
+                                        <option value="">06시</option>
+                                    </select>
+                                </div>
+                                <div class="input_box">
+                                    <select name="" id="" class="select">
+                                        <option value="">30분</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content_item">
+                            <h5 class="content_item_tit">8월</h5>
+                            <div class="dis_ib sunset">
+                                <span class="content_item_txt">일몰시간</span>
+                                <div class="input_box">
+                                    <select name="" id="" class="select">
+                                        <option value="">18시</option>
+                                    </select>
+                                </div>
+                                <div class="input_box">
+                                    <select name="" id="" class="select">
+                                        <option value="">30분</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="dis_ib sunrise">
+                                <span class="content_item_txt">일출시간</span>
+                                <div class="input_box">
+                                    <select name="" id="" class="select">
+                                        <option value="">06시</option>
+                                    </select>
+                                </div>
+                                <div class="input_box">
+                                    <select name="" id="" class="select">
+                                        <option value="">30분</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content_item">
+                            <h5 class="content_item_tit">9월</h5>
+                            <div class="dis_ib sunset">
+                                <span class="content_item_txt">일몰시간</span>
+                                <div class="input_box">
+                                    <select name="" id="" class="select">
+                                        <option value="">18시</option>
+                                    </select>
+                                </div>
+                                <div class="input_box">
+                                    <select name="" id="" class="select">
+                                        <option value="">30분</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="dis_ib sunrise">
+                                <span class="content_item_txt">일출시간</span>
+                                <div class="input_box">
+                                    <select name="" id="" class="select">
+                                        <option value="">06시</option>
+                                    </select>
+                                </div>
+                                <div class="input_box">
+                                    <select name="" id="" class="select">
+                                        <option value="">30분</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content_item">
+                            <h5 class="content_item_tit">10월</h5>
+                            <div class="dis_ib sunset">
+                                <span class="content_item_txt">일몰시간</span>
+                                <div class="input_box">
+                                    <select name="" id="" class="select">
+                                        <option value="">18시</option>
+                                    </select>
+                                </div>
+                                <div class="input_box">
+                                    <select name="" id="" class="select">
+                                        <option value="">30분</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="dis_ib sunrise">
+                                <span class="content_item_txt">일출시간</span>
+                                <div class="input_box">
+                                    <select name="" id="" class="select">
+                                        <option value="">06시</option>
+                                    </select>
+                                </div>
+                                <div class="input_box">
+                                    <select name="" id="" class="select">
+                                        <option value="">30분</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content_item">
+                            <h5 class="content_item_tit">11월</h5>
+                            <div class="dis_ib sunset">
+                                <span class="content_item_txt">일몰시간</span>
+                                <div class="input_box">
+                                    <select name="" id="" class="select">
+                                        <option value="">18시</option>
+                                    </select>
+                                </div>
+                                <div class="input_box">
+                                    <select name="" id="" class="select">
+                                        <option value="">30분</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="dis_ib sunrise">
+                                <span class="content_item_txt">일출시간</span>
+                                <div class="input_box">
+                                    <select name="" id="" class="select">
+                                        <option value="">06시</option>
+                                    </select>
+                                </div>
+                                <div class="input_box">
+                                    <select name="" id="" class="select">
+                                        <option value="">30분</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content_item">
+                            <h5 class="content_item_tit">12월</h5>
+                            <div class="dis_ib sunset">
+                                <span class="content_item_txt">일몰시간</span>
+                                <div class="input_box">
+                                    <select name="" id="" class="select">
+                                        <option value="">18시</option>
+                                    </select>
+                                </div>
+                                <div class="input_box">
+                                    <select name="" id="" class="select">
+                                        <option value="">30분</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="dis_ib sunrise">
+                                <span class="content_item_txt">일출시간</span>
+                                <div class="input_box">
+                                    <select name="" id="" class="select">
+                                        <option value="">06시</option>
+                                    </select>
+                                </div>
+                                <div class="input_box">
+                                    <select name="" id="" class="select">
+                                        <option value="">30분</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- // content_box right -->
+                <div class="input_box txt_c w100p">
+                    <button class="btn btn_smd btn_primary">조건 저장</button>
+                </div>
+           </div>
+
+       </div>
+       <!-- container -->
+    </div>
+    <script>
+        (function($){
+            $(window).on("load",function(){
+                $(".fixed_table_box .table_bd").mCustomScrollbar({
+                    theme : "minimal-dark"
+                });
+            });
+        })(jQuery);
+    </script>
+</body>
+</html>

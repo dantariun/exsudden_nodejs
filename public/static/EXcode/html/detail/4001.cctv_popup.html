@@ -1,0 +1,2269 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCTV popup</title>
+    <script src="../../lib/js/jQuery1.7.min.js"></script>
+    <script src="../../lib/js/plugin/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <link rel="stylesheet" href="../../lib/js/plugin/mCustomScrollbar/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="../../lib/css/reset.css">
+    <link rel="stylesheet" href="../../lib/css/fonts.css">
+    <link rel="stylesheet" href="../../lib/css/common.css">
+    <link rel="stylesheet" href="../../lib/css/style.css">
+</head>
+<body>
+    <div class="wrap">
+       <!-- header -->
+        <header class="header">
+
+           <div class="inner">
+               
+                <h1 class="logo">
+                    <img src="../../static/images/ic_logo.png" alt="">
+                </h1>
+
+                <div class="hd_right">
+
+                    <div class="input_box">
+                        <select name="" id="" class="select select_lg">
+                            <option value="">서울청</option>
+                            <option value="">경기청</option>
+                        </select>
+                    </div>    
+
+                    <span class="user_name">홍길동님</span>
+
+                    <div class="input_box">
+                        <button class="btn btn_sm btn_secondary">로그아웃</button>
+                    </div>    
+                </div>
+
+            </div>
+       </header> 
+       <!-- // header -->
+
+       <!-- left_nav -->
+       <aside class="left_nav">
+
+           <nav>
+                <div class="nav_box left_box">
+                    <a href="javascript:void(0)" class="nav_item"><img src="../../static/images/ic_dashboard.png" alt=""></a>
+                    <a href="javascript:void(0)" class="nav_item"><img src="../../static/images/ic_event.png" alt=""></a>
+                    <a href="javascript:void(0)" class="nav_item"><img src="../../static/images/ic_circle.png" alt=""></a>
+                    <a href="javascript:void(0)" class="nav_item"><img src="../../static/images/ic_cctv.png" alt=""></a>
+                    <a href="javascript:void(0)" class="nav_item"><img src="../../static/images/ic_assignment.png" alt=""></a>
+                    <a href="javascript:void(0)" class="nav_item"><img src="../../static/images/ic_settings.png" alt=""></a>
+                </div>
+                <!-- 현재 진입해있는 페이지의 menu_box > nav_item에 클래스명 active  -->
+                <div class="nav_box menu_box">
+                    <a href="javascript:void(0)" class="nav_item">현황판</a>
+                    <a href="javascript:void(0)" class="nav_item">이벤트</a>
+                    <a href="javascript:void(0)" class="nav_item">통계</a>
+                    <a href="javascript:void(0)" class="nav_item active">CCTV</a>
+                    <a href="javascript:void(0)" class="nav_item">이력</a>
+                    <a href="javascript:void(0)" class="nav_item">설정</a>
+                </div>
+           </nav>
+
+       </aside>
+       <!-- // left_nav -->
+
+       <!-- container -->
+       <div class="container cctv">
+
+           <div class="inner">
+                <h2 class="page_title">CCTV 관리</h2>
+
+                <!-- content_box -->
+                <div class="content_box">
+
+                    <!-- input 요소를 가로로 배치할 경우 아래와 같이 사용합니다. -->
+                    <!-- input_group -->
+                    <div class="input_group">
+                        <div class="input_box mr30">
+                            <select name="" id="" class="select">
+                                <option value="">CCTV ID</option>
+                            </select>
+                        </div>
+                        <div class="input_box mr30">
+                            <select name="" id="" class="select">
+                                <option value="">환경요소</option>
+                            </select>
+                        </div>
+                        <div class="input_box mr30">
+                            <select name="" id="" class="select">
+                                <option value="">세부항목</option>
+                            </select>
+                        </div>
+                        <div class="input_box mr30">
+                            <select name="" id="" class="select">
+                                <option value="">수신상태</option>
+                            </select>
+                        </div>
+                        <div class="input_box mr6">
+                            <select name="" id="" class="select">
+                                <option value="">알람상태</option>
+                            </select>
+                        </div>
+                        <div class="input_box mr6">
+                            <button class="btn btn_lg btn_primary btn_lg_txt">
+                                <img src="../../static/images/ic_search.png" alt="" class="ic_search">
+                                검색
+                            </button>
+                        </div>
+                        <div class="input_box">
+                            <button class="btn btn_lg btn_red btn_lg_txt">일괄알람설정</button>
+                        </div>
+                    </div>
+                    <!-- // input_group -->
+
+                    <!-- table -->
+                    <!-- 헤더 고정 테이블인 경우 아래와 같이 사용해주세요. -->
+                    <div class="fixed_table_box txt_r">
+                        <div class="input_box dis_ib mt30 mb10">
+                            <button class="btn btn_lg btn_lg_txt btn_secondary">알람OFF 스케줄</button>
+                        </div>
+                        <div class="table_hd">
+                            <!-- 헤더고정 테이블의 경우 헤더와 바디 두개의 테이블의 colgroup 선언을 동일하게 해주세요. -->
+                            <table>
+                                <colgroup>
+                                    <col class="w12p">
+                                    <col class="w12p">
+                                    <col class="w8p">
+                                    <col class="w10p">
+                                    <col class="w10p">
+                                    <col class="w8p">
+                                    <col class="w8p">
+                                    <col class="w8p">
+                                    <col class="w8p">
+                                    <col class="w8p">
+                                    <col class="w8p">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <span>CCTV ID</span>
+                                            <div class="input_box sort_box">
+                                                <button class="btn_sort"><img src="../../static/images/ic_arrow_up_wh.png" alt=""></button>
+                                                <button class="btn_sort"><img src="../../static/images/ic_arrow_down_wh.png" alt=""></button>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span>설치위치</span>
+                                            <div class="input_box sort_box">
+                                                <button class="btn_sort"><img src="../../static/images/ic_arrow_up_wh.png" alt=""></button>
+                                                <!-- <button class="btn_sort"><img src="../../static/images/ic_arrow_down_wh.png" alt=""></button> -->
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span>화질</span>
+                                            <div class="input_box sort_box">
+                                                <button class="btn_sort"><img src="../../static/images/ic_arrow_up_wh.png" alt=""></button>
+                                                <!-- <button class="btn_sort"><img src="../../static/images/ic_arrow_down_wh.png" alt=""></button> -->
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span>사용여부</span>
+                                            <div class="input_box sort_box">
+                                                <button class="btn_sort"><img src="../../static/images/ic_arrow_up_wh.png" alt=""></button>
+                                                <!-- <button class="btn_sort"><img src="../../static/images/ic_arrow_down_wh.png" alt=""></button> -->
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span>설치일시</span>
+                                            <div class="input_box sort_box">
+                                                <button class="btn_sort"><img src="../../static/images/ic_arrow_up_wh.png" alt=""></button>
+                                                <!-- <button class="btn_sort"><img src="../../static/images/ic_arrow_down_wh.png" alt=""></button> -->
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span>검지방향</span>
+                                            <div class="input_box sort_box">
+                                                <button class="btn_sort"><img src="../../static/images/ic_arrow_up_wh.png" alt=""></button>
+                                                <!-- <button class="btn_sort"><img src="../../static/images/ic_arrow_down_wh.png" alt=""></button> -->
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span>수신상태</span>
+                                            <div class="input_box sort_box">
+                                                <button class="btn_sort"><img src="../../static/images/ic_arrow_up_wh.png" alt=""></button>
+                                                <!-- <button class="btn_sort"><img src="../../static/images/ic_arrow_down_wh.png" alt=""></button> -->
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span>이벤트수</span>
+                                            <div class="input_box sort_box">
+                                                <button class="btn_sort"><img src="../../static/images/ic_arrow_up_wh.png" alt=""></button>
+                                                <!-- <button class="btn_sort"><img src="../../static/images/ic_arrow_down_wh.png" alt=""></button> -->
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span>알람상태</span>
+                                            <div class="input_box sort_box">
+                                                <button class="btn_sort"><img src="../../static/images/ic_arrow_up_wh.png" alt=""></button>
+                                                <!-- <button class="btn_sort"><img src="../../static/images/ic_arrow_down_wh.png" alt=""></button> -->
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span>검지여부</span>
+                                            <div class="input_box sort_box">
+                                                <button class="btn_sort"><img src="../../static/images/ic_arrow_up_wh.png" alt=""></button>
+                                                <!-- <button class="btn_sort"><img src="../../static/images/ic_arrow_down_wh.png" alt=""></button> -->
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span>이벤트등록</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                        <div class="table_bd scroll_box">
+
+                            <table>
+                                <colgroup>
+                                    <col class="w12p">
+                                    <col class="w12p">
+                                    <col class="w8p">
+                                    <col class="w10p">
+                                    <col class="w10p">
+                                    <col class="w8p">
+                                    <col class="w8p">
+                                    <col class="w8p">
+                                    <col class="w8p">
+                                    <col class="w8p">
+                                    <col class="w8p">
+                                </colgroup>
+                                <tbody>
+
+                                    <tr>
+                                        <td>
+                                            <span>1235123567890123</span>
+                                        </td>
+                                        <td>
+                                            <span>[국도4] 용천원동리</span>
+                                        </td>
+                                        <td>
+                                            <span>FHD</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>00-00 00:00:00</span>
+                                        </td>
+                                        <td>
+                                            <span>정방향</span>
+                                        </td>
+                                        <td>
+                                            <span>정상</span>
+                                        </td>
+                                        <td>
+                                            <span>1</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <div class="input_box">
+                                                    <button class="dis_ib btn btn_md btn_secondary">관리</button>
+                                                </div>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span>1235123567890123</span>
+                                        </td>
+                                        <td>
+                                            <span>[국도4] 용천원동리</span>
+                                        </td>
+                                        <td>
+                                            <span>HD</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>00-00 00:00:00</span>
+                                        </td>
+                                        <td>
+                                            <span>역방향</span>
+                                        </td>
+                                        <td>
+                                            <span>미작동</span>
+                                        </td>
+                                        <td>
+                                            <span>25</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <div class="input_box txt_c">
+                                                    <button class="dis_ib btn btn_md btn_secondary">관리</button>
+                                                </div>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span>1235123567890123</span>
+                                        </td>
+                                        <td>
+                                            <span>[국도4] 용천원동리</span>
+                                        </td>
+                                        <td>
+                                            <span>HD</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>00-00 00:00:00</span>
+                                        </td>
+                                        <td>
+                                            <span>정방향</span>
+                                        </td>
+                                        <td>
+                                            <span>정상</span>
+                                        </td>
+                                        <td>
+                                            <span>1</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <div class="input_box">
+                                                    <button class="dis_ib btn btn_md btn_secondary">관리</button>
+                                                </div>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span>1235123567890123</span>
+                                        </td>
+                                        <td>
+                                            <span>[국도4] 용천원동리</span>
+                                        </td>
+                                        <td>
+                                            <span>FHD</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>00-00 00:00:00</span>
+                                        </td>
+                                        <td>
+                                            <span>역방향</span>
+                                        </td>
+                                        <td>
+                                            <span>정상</span>
+                                        </td>
+                                        <td>
+                                            <span>1</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <div class="input_box">
+                                                    <button class="dis_ib btn btn_md btn_secondary">관리</button>
+                                                </div>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span>1235123567890123</span>
+                                        </td>
+                                        <td>
+                                            <span>[국도4] 용천원동리</span>
+                                        </td>
+                                        <td>
+                                            <span>HD</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>00-00 00:00:00</span>
+                                        </td>
+                                        <td>
+                                            <span>정방향</span>
+                                        </td>
+                                        <td>
+                                            <span>정상</span>
+                                        </td>
+                                        <td>
+                                            <span>20</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <div class="input_box">
+                                                    <button class="dis_ib btn btn_md btn_secondary">관리</button>
+                                                </div>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span>1235123567890123</span>
+                                        </td>
+                                        <td>
+                                            <span>[국도4] 용천원동리</span>
+                                        </td>
+                                        <td>
+                                            <span>FHD</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>00-00 00:00:00</span>
+                                        </td>
+                                        <td>
+                                            <span>역방향</span>
+                                        </td>
+                                        <td>
+                                            <span>정상</span>
+                                        </td>
+                                        <td>
+                                            <span>16</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <div class="input_box">
+                                                    <button class="dis_ib btn btn_md btn_secondary">관리</button>
+                                                </div>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span>1235123567890123</span>
+                                        </td>
+                                        <td>
+                                            <span>[국도4] 용천원동리</span>
+                                        </td>
+                                        <td>
+                                            <span>HD</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>00-00 00:00:00</span>
+                                        </td>
+                                        <td>
+                                            <span>정방향</span>
+                                        </td>
+                                        <td>
+                                            <span>정상</span>
+                                        </td>
+                                        <td>
+                                            <span>12</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <div class="input_box">
+                                                    <button class="dis_ib btn btn_md btn_secondary">관리</button>
+                                                </div>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span>1235123567890123</span>
+                                        </td>
+                                        <td>
+                                            <span>[국도4] 용천원동리</span>
+                                        </td>
+                                        <td>
+                                            <span>HD</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>00-00 00:00:00</span>
+                                        </td>
+                                        <td>
+                                            <span>역방향</span>
+                                        </td>
+                                        <td>
+                                            <span>정상</span>
+                                        </td>
+                                        <td>
+                                            <span>8</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <div class="input_box">
+                                                    <button class="dis_ib btn btn_md btn_secondary">관리</button>
+                                                </div>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span>1235123567890123</span>
+                                        </td>
+                                        <td>
+                                            <span>[국도4] 용천원동리</span>
+                                        </td>
+                                        <td>
+                                            <span>FHD</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>00-00 00:00:00</span>
+                                        </td>
+                                        <td>
+                                            <span>정방향</span>
+                                        </td>
+                                        <td>
+                                            <span>정상</span>
+                                        </td>
+                                        <td>
+                                            <span>7</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <div class="input_box">
+                                                    <button class="dis_ib btn btn_md btn_secondary">관리</button>
+                                                </div>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span>1235123567890123</span>
+                                        </td>
+                                        <td>
+                                            <span>[국도4] 용천원동리</span>
+                                        </td>
+                                        <td>
+                                            <span>HD</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>00-00 00:00:00</span>
+                                        </td>
+                                        <td>
+                                            <span>역방향</span>
+                                        </td>
+                                        <td>
+                                            <span>정상</span>
+                                        </td>
+                                        <td>
+                                            <span>15</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <div class="input_box">
+                                                    <button class="dis_ib btn btn_md btn_secondary">관리</button>
+                                                </div>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span>1235123567890123</span>
+                                        </td>
+                                        <td>
+                                            <span>[국도4] 용천원동리</span>
+                                        </td>
+                                        <td>
+                                            <span>HD</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>00-00 00:00:00</span>
+                                        </td>
+                                        <td>
+                                            <span>정방향</span>
+                                        </td>
+                                        <td>
+                                            <span>정상</span>
+                                        </td>
+                                        <td>
+                                            <span>14</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <div class="input_box">
+                                                    <button class="dis_ib btn btn_md btn_secondary">관리</button>
+                                                </div>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span>1235123567890123</span>
+                                        </td>
+                                        <td>
+                                            <span>[국도4] 용천원동리</span>
+                                        </td>
+                                        <td>
+                                            <span>HD</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>00-00 00:00:00</span>
+                                        </td>
+                                        <td>
+                                            <span>역방향</span>
+                                        </td>
+                                        <td>
+                                            <span>정상</span>
+                                        </td>
+                                        <td>
+                                            <span>11</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <div class="input_box">
+                                                    <button class="dis_ib btn btn_md btn_secondary">관리</button>
+                                                </div>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span>1235123567890123</span>
+                                        </td>
+                                        <td>
+                                            <span>[국도4] 용천원동리</span>
+                                        </td>
+                                        <td>
+                                            <span>HD</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>00-00 00:00:00</span>
+                                        </td>
+                                        <td>
+                                            <span>정방향</span>
+                                        </td>
+                                        <td>
+                                            <span>정상</span>
+                                        </td>
+                                        <td>
+                                            <span>9</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <div class="input_box">
+                                                    <button class="dis_ib btn btn_md btn_secondary">관리</button>
+                                                </div>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span>1235123567890123</span>
+                                        </td>
+                                        <td>
+                                            <span>[국도4] 용천원동리</span>
+                                        </td>
+                                        <td>
+                                            <span>FHD</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>00-00 00:00:00</span>
+                                        </td>
+                                        <td>
+                                            <span>역방향</span>
+                                        </td>
+                                        <td>
+                                            <span>정상</span>
+                                        </td>
+                                        <td>
+                                            <span>10</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <div class="input_box">
+                                                    <button class="dis_ib btn btn_md btn_secondary">관리</button>
+                                                </div>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span>1235123567890123</span>
+                                        </td>
+                                        <td>
+                                            <span>[국도4] 용천원동리</span>
+                                        </td>
+                                        <td>
+                                            <span>FHD</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>00-00 00:00:00</span>
+                                        </td>
+                                        <td>
+                                            <span>정방향</span>
+                                        </td>
+                                        <td>
+                                            <span>정상</span>
+                                        </td>
+                                        <td>
+                                            <span>6</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <div class="input_box">
+                                                    <button class="dis_ib btn btn_md btn_secondary">관리</button>
+                                                </div>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span>1235123567890123</span>
+                                        </td>
+                                        <td>
+                                            <span>[국도4] 용천원동리</span>
+                                        </td>
+                                        <td>
+                                            <span>FHD</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>00-00 00:00:00</span>
+                                        </td>
+                                        <td>
+                                            <span>역방향</span>
+                                        </td>
+                                        <td>
+                                            <span>정상</span>
+                                        </td>
+                                        <td>
+                                            <span>12</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <div class="input_box">
+                                                    <button class="dis_ib btn btn_md btn_secondary">관리</button>
+                                                </div>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span>1235123567890123</span>
+                                        </td>
+                                        <td>
+                                            <span>[국도4] 용천원동리</span>
+                                        </td>
+                                        <td>
+                                            <span>HD</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>00-00 00:00:00</span>
+                                        </td>
+                                        <td>
+                                            <span>정방향</span>
+                                        </td>
+                                        <td>
+                                            <span>정상</span>
+                                        </td>
+                                        <td>
+                                            <span>3</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <div class="input_box">
+                                                    <button class="dis_ib btn btn_md btn_secondary">관리</button>
+                                                </div>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span>1235123567890123</span>
+                                        </td>
+                                        <td>
+                                            <span>[국도4] 용천원동리</span>
+                                        </td>
+                                        <td>
+                                            <span>FHD</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>00-00 00:00:00</span>
+                                        </td>
+                                        <td>
+                                            <span>역방향</span>
+                                        </td>
+                                        <td>
+                                            <span>정상</span>
+                                        </td>
+                                        <td>
+                                            <span>22</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <div class="input_box">
+                                                    <button class="dis_ib btn btn_md btn_secondary">관리</button>
+                                                </div>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span>1235123567890123</span>
+                                        </td>
+                                        <td>
+                                            <span>[국도4] 용천원동리</span>
+                                        </td>
+                                        <td>
+                                            <span>HD</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>00-00 00:00:00</span>
+                                        </td>
+                                        <td>
+                                            <span>정방향</span>
+                                        </td>
+                                        <td>
+                                            <span>정상</span>
+                                        </td>
+                                        <td>
+                                            <span>1</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>ON</span>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <div class="input_box">
+                                                    <button class="dis_ib btn btn_md btn_secondary">관리</button>
+                                                </div>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span>1235123567890123</span>
+                                        </td>
+                                        <td>
+                                            <span>[국도4] 용천원동리</span>
+                                        </td>
+                                        <td>
+                                            <span>FHD</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>00-00 00:00:00</span>
+                                        </td>
+                                        <td>
+                                            <span>역방향</span>
+                                        </td>
+                                        <td>
+                                            <span>정상</span>
+                                        </td>
+                                        <td>
+                                            <span>1</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>OFF</span>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <div class="input_box">
+                                                    <button class="dis_ib btn btn_md btn_secondary">관리</button>
+                                                </div>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+
+                        </div>
+
+                    </div>
+                    <!-- // table -->
+
+                </div>
+                <!-- // content_box -->
+
+           </div>
+
+       </div>
+       <!-- container -->
+
+        <!-- 팝업 -->
+        <div class="popup_wrap">
+
+            <!-- cctv 페이지 팝업내용 이기 때문에 popup_box, cctv_popup_box 동시사용 -->
+            <div class="popup_box cctv_popup_box">
+
+                <div class="popup_hd">
+
+                    <h3 class="pop_title">CCTV 관리</h3>
+
+                    <a href="javascript:void(0)" class="btn_pop_close"><img src="../../static/images/ic_close.png" alt=""></a>
+
+                </div>
+
+                <div class="popup_bd">
+                    
+                    <div class="popup_left_box">
+
+                        <div class="popup_desc_box">
+                            <h4>$CCTV ID$ ($해상도$) : $1차검지일시$</h4>
+                            <div class="input_box">
+                                <button class="btn btn_md btn_secondary_outline">ROI 설정</button>
+                            </div>
+                        </div>
+                        <div class="cctv_box"></div>
+
+                    </div>
+
+                    <div class="popup_right_box">
+
+                        <!-- tab_item 클릭시 active 클래스 토글되는 형태입니다 -->
+                        <!-- tab_menu -->
+                        <div class="tab_box type-a">
+                            <ul>
+                                <li class="tab_item"><span>이벤트이력</span></li>
+                                <li class="tab_item"><span>CCTV정보</span></li>
+                                <li class="tab_item"><span>제어정보</span></li>
+                                <li class="tab_item"><span>분석설정</span></li>
+                                <li class="tab_item"><span>변경이력</span></li>
+                                <li class="tab_item"><span>알람 OFF 스케쥴</span></li>
+                                <li class="tab_item active"><span>알람ON 예외처리</span></li>
+                            </ul>
+                        </div>
+                        <!-- //tab_menu -->
+
+                        <!-- 이벤트이력 -->
+                        <div class="fixed_table_box event_detail" style="display: none">
+                            <div class="table_hd">
+                                <!-- 헤더고정 테이블의 경우 헤더와 바디 두개의 테이블의 colgroup 선언을 동일하게 해주세요. -->
+                                <!-- 헤더고정테이블의 2개 줄이 필요한 경우가 있습니다. 그럴땐 tr 에 클래스명 table_hd_category를 추가해주세요. -->
+                                <table>
+                                    <colgroup>
+                                        <col class="w10p">
+                                        <col class="w21p">
+                                        <col class="w14p">
+                                        <col class="w14p">
+                                        <col class="w14p">
+                                        <col class="w27p">
+                                    </colgroup>
+                                    <tbody>
+
+                                        <tr class="table_hd_category">
+                                            <td colspan="6"><span>2차 검지</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span>상황</span></td>
+                                            <td><span>검지일시</span></td>
+                                            <td><span>검지구분</span></td>
+                                            <td><span>검지유형</span></td>
+                                            <td><span>검지비교</span></td>
+                                            <td><span>메모</span></td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+    
+                            </div>
+                            <div class="table_bd scroll_box">
+    
+                                <table>
+                                    <colgroup>
+                                        <col class="w10p">
+                                        <col class="w21p">
+                                        <col class="w14p">
+                                        <col class="w14p">
+                                        <col class="w14p">
+                                        <col class="w27p">
+                                    </colgroup>
+                                    <tbody>
+    
+                                        <tr>
+                                            <td><span>1급</span></td>
+                                            <td><span>00-00 00:00:00</span></td>
+                                            <td><span>정검지</span></td>
+                                            <td><span>정지</span></td>
+                                            <td><span>정상</span></td>
+                                            <td><span>메모노출글자수 확인</span></td>
+                                        </tr>
+    
+                                        <tr>
+                                            <td><span>1급</span></td>
+                                            <td><span>00-00 00:00:00</span></td>
+                                            <td><span>오검지</span></td>
+                                            <td><span>역주행</span></td>
+                                            <td><span>비정상</span></td>
+                                            <td><span>메모노출글자수 확인</span></td>
+                                        </tr>
+    
+                                        <tr>
+                                            <td><span>1급</span></td>
+                                            <td><span>00-00 00:00:00</span></td>
+                                            <td><span>정검지</span></td>
+                                            <td><span>보행자</span></td>
+                                            <td><span>정상</span></td>
+                                            <td><span>메모노출글자수 확인</span></td>
+                                        </tr>
+    
+                                        <tr>
+                                            <td><span>1급</span></td>
+                                            <td><span>00-00 00:00:00</span></td>
+                                            <td><span>오검지</span></td>
+                                            <td><span>정지</span></td>
+                                            <td><span>비정상</span></td>
+                                            <td><span>메모노출글자수 확인</span></td>
+                                        </tr>
+    
+                                        <tr>
+                                            <td><span>1급</span></td>
+                                            <td><span>00-00 00:00:00</span></td>
+                                            <td><span>정검지</span></td>
+                                            <td><span>역주행</span></td>
+                                            <td><span>정상</span></td>
+                                            <td><span>메모노출글자수 확인</span></td>
+                                        </tr>
+    
+                                        <tr>
+                                            <td><span>1급</span></td>
+                                            <td><span>00-00 00:00:00</span></td>
+                                            <td><span>오검지</span></td>
+                                            <td><span>보행자</span></td>
+                                            <td><span>비정상</span></td>
+                                            <td><span>메모노출글자수 확인</span></td>
+                                        </tr>
+    
+                                        <tr>
+                                            <td><span>1급</span></td>
+                                            <td><span>00-00 00:00:00</span></td>
+                                            <td><span>정검지</span></td>
+                                            <td><span>정지</span></td>
+                                            <td><span>정상</span></td>
+                                            <td><span>메모노출글자수 확인</span></td>
+                                        </tr>
+    
+                                        <tr>
+                                            <td><span>1급</span></td>
+                                            <td><span>00-00 00:00:00</span></td>
+                                            <td><span>오검지</span></td>
+                                            <td><span>역주행</span></td>
+                                            <td><span>비정상</span></td>
+                                            <td><span>메모노출글자수 확인</span></td>
+                                        </tr>
+    
+                                        <tr>
+                                            <td><span>1급</span></td>
+                                            <td><span>00-00 00:00:00</span></td>
+                                            <td><span>정검지</span></td>
+                                            <td><span>보행자</span></td>
+                                            <td><span>정상</span></td>
+                                            <td><span>메모노출글자수 확인</span></td>
+                                        </tr>
+    
+                                        <tr>
+                                            <td><span>1급</span></td>
+                                            <td><span>00-00 00:00:00</span></td>
+                                            <td><span>오검지</span></td>
+                                            <td><span>정지</span></td>
+                                            <td><span>비정상</span></td>
+                                            <td><span>메모노출글자수 확인</span></td>
+                                        </tr>
+    
+                                        <tr>
+                                            <td><span>1급</span></td>
+                                            <td><span>00-00 00:00:00</span></td>
+                                            <td><span>정검지</span></td>
+                                            <td><span>역주행</span></td>
+                                            <td><span>정상</span></td>
+                                            <td><span>메모노출글자수 확인</span></td>
+                                        </tr>
+    
+                                        <tr>
+                                            <td><span>1급</span></td>
+                                            <td><span>00-00 00:00:00</span></td>
+                                            <td><span>오검지</span></td>
+                                            <td><span>정지</span></td>
+                                            <td><span>비정상</span></td>
+                                            <td><span>메모노출글자수 확인</span></td>
+                                        </tr>
+    
+                                        <tr>
+                                            <td><span>1급</span></td>
+                                            <td><span>00-00 00:00:00</span></td>
+                                            <td><span>정검지</span></td>
+                                            <td><span>역주행</span></td>
+                                            <td><span>정상</span></td>
+                                            <td><span>메모노출글자수 확인</span></td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+    
+                        </div>
+                        <!-- 이벤트이력 -->
+
+                        <!-- CCTV 정보 -->
+                        <!-- 헤더고정이 아닌 경우의 테이블 -->
+                        <div class="basic_table_box cctvinfo" style="display: none;">
+
+                            <div class="table_wrap">
+                                <table>
+                                    <colgroup>
+                                        <col class="w25p">
+                                        <col class="w25p">
+                                        <col class="w25p">
+                                        <col class="w25p">
+                                    </colgroup>
+                                    <tbody>
+    
+                                        <tr>
+                                            <th><span>CCTV ID</span></th>
+                                            <td colspan="3"><span>1234567890123</span></td>
+                                        </tr>
+    
+                                        <tr>
+                                            <th><span>관리청</span></th>
+                                            <td><span>서울청</span></td>
+                                            <th><span>제조사명</span></th>
+                                            <td><span>HP제조사1321321</span></td>
+                                        </tr>
+                                        <tr>
+                                            <th><span>설치위치</span></th>
+                                            <td><span>[국도4] 옹천원동리</span></td>
+                                            <th><span>모델명</span></th>
+                                            <td><span>model no.</span></td>
+                                        </tr>
+                                        <tr>
+                                            <th><span>지도좌표</span></th>
+                                            <td><span>위도 32.65/경도 32.65</span></td>
+                                            <th><span>검지방향</span></th>
+                                            <td><span>정방향</span></td>
+                                        </tr>
+                                        <tr>
+                                            <th><span>설치일시</span></th>
+                                            <td><span>00-00  00:00:00</span></td>
+                                            <th><span>통신상태</span></th>
+                                            <td><span>ON</span></td>
+                                        </tr>
+                                        <tr>
+                                            <th><span>송신지</span></th>
+                                            <td><span>송신지내용</span></td>
+                                            <th><span>순번</span></th>
+                                            <td><span>순번내용</span></td>
+                                        </tr>
+                                        <tr>
+                                            <th><span>목적지</span></th>
+                                            <td><span>목적지내용</span></td>
+                                            <th><span>제어기번호</span></th>
+                                            <td><span>제어기번호내용</span></td>
+                                        </tr>
+                                        <tr>
+                                            <th><span>운영코드</span></th>
+                                            <td><span>운영코드내용</span></td>
+                                            <th><span>통신IP</span></th>
+                                            <td><span>통신IP내용</span></td>
+                                        </tr>
+                                        <tr>
+                                            <th><span>응답여부</span></th>
+                                            <td><span>응답여부내용</span></td>
+                                            <th><span>통신 포트</span></th>
+                                            <td><span>통신 포트내용</span></td>
+                                        </tr>
+    
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                        <!-- // CCTV 정보 -->
+
+                        <!-- 제어정보 -->
+                        <div class="basic_table_box control_info" style="display: none;">
+
+                            <div class="table_wrap">
+                                <table>
+                                    <colgroup>
+                                        <col class="w25p">
+                                        <col class="w25p">
+                                        <col class="w25p">
+                                        <col class="w25p">
+                                    </colgroup>
+                                    <tbody>
+    
+                                        <tr>
+                                            <th><span>검지영역</span></th>
+                                            <td><span>정상</span></td>
+                                            <th><span>시정미확보</span></th>
+                                            <td><span>검지영역축소</span></td>
+                                        </tr>
+    
+                                    </tbody>
+                                </table>
+    
+                                <table class="mt10">
+                                    <colgroup>
+                                        <col class="w25p">
+                                        <col class="w25p">
+                                        <col class="w25p">
+                                        <col class="w25p">
+                                    </colgroup>
+                                    <tbody>
+    
+                                        <tr>
+                                            <th><span>Preset</span></th>
+                                            <td colspan="3"><span>프리셋명/프리셋번호</span></td>
+                                        </tr>
+    
+                                        <tr>
+                                            <th rowspan="4" style="border-right: 1px solid #e6e7e8"><span>관리청</span></th>
+                                            <th><span>Pan위치</span></th>
+                                            <td colspan="2"><span>값</span></td>
+                                        </tr>
+                                        <tr>
+                                            <th><span>Tilt위치</span></th>
+                                            <td colspan="2"><span>값</span></td>
+                                        </tr>
+                                        <tr>
+                                            <th><span>Zoom위치</span></th>
+                                            <td colspan="2"><span>값</span></td>
+                                        </tr>
+                                        <tr>
+                                            <th><span>포커스 위치</span></th>
+                                            <td colspan="2"><span>값</span></td>
+                                        </tr>
+    
+                                    </tbody>
+                                </table>
+    
+                                <table class="mt10">
+                                    <colgroup>
+                                        <col class="w25p">
+                                        <col class="w25p">
+                                        <col class="w25p">
+                                        <col class="w25p">
+                                    </colgroup>
+                                    <tbody>
+    
+                                        <tr>
+                                            <th><span>Preset</span></th>
+                                            <td colspan="3"><span>프리셋명/프리셋번호</span></td>
+                                        </tr>
+    
+                                        <tr>
+                                            <th rowspan="4" style="border-right: 1px solid #e6e7e8"><span>관리청</span></th>
+                                            <th><span>Pan위치</span></th>
+                                            <td colspan="2"><span>값</span></td>
+                                        </tr>
+                                        <tr>
+                                            <th><span>Tilt위치</span></th>
+                                            <td colspan="2"><span>값</span></td>
+                                        </tr>
+                                        <tr>
+                                            <th><span>Zoom위치</span></th>
+                                            <td colspan="2"><span>값</span></td>
+                                        </tr>
+                                        <tr>
+                                            <th><span>포커스 위치</span></th>
+                                            <td colspan="2"><span>값</span></td>
+                                        </tr>
+    
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="control_box">
+
+                                <div class="input_group">
+
+                                    <div class="input_box control_btn_box vertical_control">
+                                        <button class="btn control_btn">위로 이동</button>
+                                        <button class="btn control_btn">아래로 이동</button>
+                                    </div>
+                                    <div class="input_box control_btn_box horizon_control">
+                                        <button class="btn control_btn">왼쪽으로 이동</button>
+                                        <button class="btn control_btn">오른쪽으로 이동</button>
+                                    </div>
+                                    <div class="input_box control_btn_box zoom_control">
+                                        <button class="btn control_btn">확대하기</button>
+                                        <button class="btn control_btn">축소하기</button>
+                                    </div>
+                                    <div class="input_box">
+                                        <button class="btn btn_lg btn_primary btn_lg_txt">화면저장하기</button>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <!-- // 제어정보 -->
+
+                        <!-- 분석설정 -->
+                        <div class="basic_table_box analyze_info" style="display: none">
+
+                            <div class="table_wrap">
+                                <table>
+                                    <colgroup>
+                                        <col class="w20p">
+                                        <col class="w15p">
+                                        <col class="w25p">
+                                        <col class="w15p">
+                                        <col class="w25p">
+                                    </colgroup>
+                                    <tbody>
+    
+                                        <tr>
+                                            <th rowspan="2"><span>시간대별<br>분석여부</span></th>
+                                            <th><span>주간</span></th>
+                                            <td>
+                                                <div class="input_group">
+                                                    <label class="input_box radio_box">
+                                                        <input type="radio" name="" id="">
+                                                        <span>가능</span>
+                                                    </label>
+                                                    <label class="input_box radio_box">
+                                                        <input type="radio" name="" id="">
+                                                        <span>불가능</span>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <th><span>일몰</span></th>
+                                            <td>
+                                                <div class="input_group">
+                                                    <label class="input_box radio_box">
+                                                        <input type="radio" name="" id="">
+                                                        <span>가능</span>
+                                                    </label>
+                                                    <label class="input_box radio_box">
+                                                        <input type="radio" name="" id="">
+                                                        <span>불가능</span>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th><span>야간</span></th>
+                                            <td>
+                                                <div class="input_group">
+                                                    <label class="input_box radio_box">
+                                                        <input type="radio" name="" id="">
+                                                        <span>가능</span>
+                                                    </label>
+                                                    <label class="input_box radio_box">
+                                                        <input type="radio" name="" id="">
+                                                        <span>불가능</span>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <th><span>일출</span></th>
+                                            <td>
+                                                <div class="input_group">
+                                                    <label class="input_box radio_box">
+                                                        <input type="radio" name="" id="">
+                                                        <span>가능</span>
+                                                    </label>
+                                                    <label class="input_box radio_box">
+                                                        <input type="radio" name="" id="">
+                                                        <span>불가능</span>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <th rowspan="2"><span>날씨별<br>분석여부</span></th>
+                                            <th><span>눈</span></th>
+                                            <td>
+                                                <div class="input_group">
+                                                    <label class="input_box radio_box">
+                                                        <input type="radio" name="" id="">
+                                                        <span>가능</span>
+                                                    </label>
+                                                    <label class="input_box radio_box">
+                                                        <input type="radio" name="" id="">
+                                                        <span>불가능</span>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <th><span>안개</span></th>
+                                            <td>
+                                                <div class="input_group">
+                                                    <label class="input_box radio_box">
+                                                        <input type="radio" name="" id="">
+                                                        <span>가능</span>
+                                                    </label>
+                                                    <label class="input_box radio_box">
+                                                        <input type="radio" name="" id="">
+                                                        <span>불가능</span>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th><span>비</span></th>
+                                            <td>
+                                                <div class="input_group">
+                                                    <label class="input_box radio_box">
+                                                        <input type="radio" name="" id="">
+                                                        <span>가능</span>
+                                                    </label>
+                                                    <label class="input_box radio_box">
+                                                        <input type="radio" name="" id="">
+                                                        <span>불가능</span>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <th><span>맑음</span></th>
+                                            <td>
+                                                <div class="input_group">
+                                                    <label class="input_box radio_box">
+                                                        <input type="radio" name="" id="">
+                                                        <span>가능</span>
+                                                    </label>
+                                                    <label class="input_box radio_box">
+                                                        <input type="radio" name="" id="">
+                                                        <span>불가능</span>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <th rowspan="2"><span>계절별<br>분석여부</span></th>
+                                            <th><span>봄</span></th>
+                                            <td>
+                                                <div class="input_group">
+                                                    <label class="input_box radio_box">
+                                                        <input type="radio" name="" id="">
+                                                        <span>가능</span>
+                                                    </label>
+                                                    <label class="input_box radio_box">
+                                                        <input type="radio" name="" id="">
+                                                        <span>불가능</span>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <th><span>가을</span></th>
+                                            <td>
+                                                <div class="input_group">
+                                                    <label class="input_box radio_box">
+                                                        <input type="radio" name="" id="">
+                                                        <span>가능</span>
+                                                    </label>
+                                                    <label class="input_box radio_box">
+                                                        <input type="radio" name="" id="">
+                                                        <span>불가능</span>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th><span>여름</span></th>
+                                            <td>
+                                                <div class="input_group">
+                                                    <label class="input_box radio_box">
+                                                        <input type="radio" name="" id="">
+                                                        <span>가능</span>
+                                                    </label>
+                                                    <label class="input_box radio_box">
+                                                        <input type="radio" name="" id="">
+                                                        <span>불가능</span>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <th><span>겨울</span></th>
+                                            <td>
+                                                <div class="input_group">
+                                                    <label class="input_box radio_box">
+                                                        <input type="radio" name="" id="">
+                                                        <span>가능</span>
+                                                    </label>
+                                                    <label class="input_box radio_box">
+                                                        <input type="radio" name="" id="">
+                                                        <span>불가능</span>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                        </tr>
+    
+                                        <tr>
+                                            <th rowspan="2"><span>환경별<br>분석여부</span></th>
+                                            <th><span>역광</span></th>
+                                            <td>
+                                                <div class="input_group">
+                                                    <label class="input_box radio_box">
+                                                        <input type="radio" name="" id="">
+                                                        <span>가능</span>
+                                                    </label>
+                                                    <label class="input_box radio_box">
+                                                        <input type="radio" name="" id="">
+                                                        <span>불가능</span>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <th><span>포커스</span></th>
+                                            <td>
+                                                <div class="input_group">
+                                                    <label class="input_box radio_box">
+                                                        <input type="radio" name="" id="">
+                                                        <span>가능</span>
+                                                    </label>
+                                                    <label class="input_box radio_box">
+                                                        <input type="radio" name="" id="">
+                                                        <span>불가능</span>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th><span>저조도</span></th>
+                                            <td>
+                                                <div class="input_group">
+                                                    <label class="input_box radio_box">
+                                                        <input type="radio" name="" id="">
+                                                        <span>가능</span>
+                                                    </label>
+                                                    <label class="input_box radio_box">
+                                                        <input type="radio" name="" id="">
+                                                        <span>불가능</span>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <th><span>야간불량</span></th>
+                                            <td>
+                                                <div class="input_group">
+                                                    <label class="input_box radio_box">
+                                                        <input type="radio" name="" id="">
+                                                        <span>가능</span>
+                                                    </label>
+                                                    <label class="input_box radio_box">
+                                                        <input type="radio" name="" id="">
+                                                        <span>불가능</span>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+
+                                <div class="input_box txt_c mt10">
+                                    <button class="btn btn_md btn_primary dis_ib">설정저장</button>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- // 분석설정 -->
+
+                        <!-- 변경이력 -->
+                        <div class="fixed_table_box chg_time" style="display: none;">
+                            <div class="table_hd">
+                                <!-- 헤더고정 테이블의 경우 헤더와 바디 두개의 테이블의 colgroup 선언을 동일하게 해주세요. -->
+                                <table>
+                                    <colgroup>
+                                        <col class="w33p">
+                                        <col class="w34p">
+                                        <col class="w33p">
+                                    </colgroup>
+                                    <tbody>
+
+                                        <tr>
+                                            <td><span>이력일시</span></td>
+                                            <td><span>담당자</span></td>
+                                            <td><span>변경분류</span></td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+    
+                            </div>
+                            <div class="table_bd scroll_box">
+    
+                                <table>
+                                    <colgroup>
+                                        <col class="w33p">
+                                        <col class="w34p">
+                                        <col class="w33p">
+                                    </colgroup>
+                                    <tbody>
+    
+                                        <tr>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>담당명</span></td>
+                                            <td><span>ROI변경</span></td>
+                                        </tr>
+    
+                                        <tr>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>담당명</span></td>
+                                            <td><span>알림OFF</span></td>
+                                        </tr>
+    
+                                        <tr>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>담당명</span></td>
+                                            <td><span>알림ON</span></td>
+                                        </tr>
+    
+                                        <tr>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>담당명</span></td>
+                                            <td><span>ROI변경</span></td>
+                                        </tr>
+    
+                                        <tr>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>담당명</span></td>
+                                            <td><span>알림OFF</span></td>
+                                        </tr>
+    
+                                        <tr>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>담당명</span></td>
+                                            <td><span>알림ON</span></td>
+                                        </tr>
+    
+                                        <tr>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>담당명</span></td>
+                                            <td><span>ROI변경</span></td>
+                                        </tr>
+    
+                                        <tr>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>담당명</span></td>
+                                            <td><span>알림OFF</span></td>
+                                        </tr>
+    
+                                        <tr>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>담당명</span></td>
+                                            <td><span>알림ON</span></td>
+                                        </tr>
+    
+                                        <tr>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>담당명</span></td>
+                                            <td><span>ROI변경</span></td>
+                                        </tr>
+    
+                                        <tr>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>담당명</span></td>
+                                            <td><span>알림OFF</span></td>
+                                        </tr>
+    
+                                        <tr>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>담당명</span></td>
+                                            <td><span>알림OFF</span></td>
+                                        </tr>
+    
+                                        <tr>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>담당명</span></td>
+                                            <td><span>알림OFF</span></td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+    
+                        </div>
+                        <!-- 변경이력 -->
+
+                        <!-- 알람Off 스케줄 -->
+                        <div class="fixed_table_box alarm_off">
+                            <div class="table_hd">
+                                <!-- 헤더고정 테이블의 경우 헤더와 바디 두개의 테이블의 colgroup 선언을 동일하게 해주세요. -->
+                                <table>
+                                    <colgroup>
+                                        <col class="w24p">
+                                        <col class="w24p">
+                                        <col class="w14p">
+                                        <col class="w14p">
+                                        <col class="w24p">
+                                    </colgroup>
+                                    <tbody>
+
+                                        <tr>
+                                            <td><span>시작</span></td>
+                                            <td><span>종료</span></td>
+                                            <td><span>반복</span></td>
+                                            <td><span>검지유형</span></td>
+                                            <td><span>취소</span></td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+    
+                            </div>
+                            <div class="table_bd scroll_box">
+    
+                                <table>
+                                    <colgroup>
+                                        <col class="w24p">
+                                        <col class="w24p">
+                                        <col class="w14p">
+                                        <col class="w14p">
+                                        <col class="w24p">
+                                    </colgroup>
+                                    <tbody>
+    
+                                        <tr>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>주간</span></td>
+                                            <td><span>ROI변경</span></td>
+                                            <td>
+                                                <div class="input_box txt_c">
+                                                    <button class="btn btn_md btn_secondary_outline dis_ib">알람OFF취소</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+    
+                                        <tr>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>야간</span></td>
+                                            <td><span>알림OFF</span></td>
+                                            <td>
+                                                <div class="input_box txt_c">
+                                                    <button class="btn btn_md btn_secondary_outline dis_ib">알람OFF취소</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+    
+                                        <tr>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>일출</span></td>
+                                            <td><span>알림ON</span></td>
+                                            <td>
+                                                <div class="input_box txt_c">
+                                                    <button class="btn btn_md btn_secondary_outline dis_ib">알람OFF취소</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+    
+                                        <tr>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>일몰</span></td>
+                                            <td><span>ROI변경</span></td>
+                                            <td>
+                                                <div class="input_box txt_c">
+                                                    <button class="btn btn_md btn_secondary_outline dis_ib">알람OFF취소</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+    
+                                        <tr>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>주간</span></td>
+                                            <td><span>알림OFF</span></td>
+                                            <td>
+                                                <div class="input_box txt_c">
+                                                    <button class="btn btn_md btn_secondary_outline dis_ib">알람OFF취소</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+    
+                                        <tr>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>야간</span></td>
+                                            <td><span>알림ON</span></td>
+                                            <td>
+                                                <div class="input_box txt_c">
+                                                    <button class="btn btn_md btn_secondary_outline dis_ib">알람OFF취소</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+    
+                                        <tr>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>일출</span></td>
+                                            <td><span>ROI변경</span></td>
+                                            <td>
+                                                <div class="input_box txt_c">
+                                                    <button class="btn btn_md btn_secondary_outline dis_ib">알람OFF취소</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+    
+                                        <tr>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>일몰</span></td>
+                                            <td><span>알림OFF</span></td>
+                                            <td>
+                                                <div class="input_box txt_c">
+                                                    <button class="btn btn_md btn_secondary_outline dis_ib">알람OFF취소</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+    
+                                        <tr>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>주간</span></td>
+                                            <td><span>알림ON</span></td>
+                                            <td>
+                                                <div class="input_box txt_c">
+                                                    <button class="btn btn_md btn_secondary_outline dis_ib">알람OFF취소</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+    
+                                        <tr>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>야간</span></td>
+                                            <td><span>ROI변경</span></td>
+                                            <td>
+                                                <div class="input_box txt_c">
+                                                    <button class="btn btn_md btn_secondary_outline dis_ib">알람OFF취소</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+    
+                                        <tr>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>일출</span></td>
+                                            <td><span>알림OFF</span></td>
+                                            <td>
+                                                <div class="input_box txt_c">
+                                                    <button class="btn btn_md btn_secondary_outline dis_ib">알람OFF취소</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+    
+                                        <tr>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>일출</span></td>
+                                            <td><span>알림OFF</span></td>
+                                            <td>
+                                                <div class="input_box txt_c">
+                                                    <button class="btn btn_md btn_secondary_outline dis_ib">알람OFF취소</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+    
+                                        <tr>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>일출</span></td>
+                                            <td><span>알림OFF</span></td>
+                                            <td>
+                                                <div class="input_box txt_c">
+                                                    <button class="btn btn_md btn_secondary_outline dis_ib">알람OFF취소</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                                
+                            <div class="input_box txt_c">
+                                <button class="btn btn_md btn_primary dis_ib">알람OFF 설정</button>
+                            </div>
+    
+                        </div>
+                        <!-- 알람Off 스케줄 -->
+
+                        <!-- 알람On 예외처리 테이블 -->
+                        <div class="fixed_table_box alarm_on" style="display: none;">
+                            <div class="table_hd">
+                                <!-- 헤더고정 테이블의 경우 헤더와 바디 두개의 테이블의 colgroup 선언을 동일하게 해주세요. -->
+                                <table>
+                                    <colgroup>
+                                        <col class="w24p">
+                                        <col class="w24p">
+                                        <col class="w14p">
+                                        <col class="w14p">
+                                        <col class="w24p">
+                                    </colgroup>
+                                    <tbody>
+
+                                        <tr>
+                                            <td><span>시작</span></td>
+                                            <td><span>종료</span></td>
+                                            <td><span>시간대별</span></td>
+                                            <td><span>검지유형</span></td>
+                                            <td><span>취소</span></td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+    
+                            </div>
+                            <div class="table_bd scroll_box">
+    
+                                <table>
+                                    <colgroup>
+                                        <col class="w24p">
+                                        <col class="w24p">
+                                        <col class="w14p">
+                                        <col class="w14p">
+                                        <col class="w24p">
+                                    </colgroup>
+                                    <tbody>
+    
+                                        <tr>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>주간</span></td>
+                                            <td><span>검지유형</span></td>
+                                            <td>
+                                                <div class="input_box txt_c">
+                                                    <button class="btn btn_md btn_secondary_outline dis_ib">알람 ON 예외</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+    
+                                        <tr>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>야간</span></td>
+                                            <td><span>검지유형</span></td>
+                                            <td>
+                                                <div class="input_box txt_c">
+                                                    <button class="btn btn_md btn_secondary_outline dis_ib">알람 ON 예외</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+    
+                                        <tr>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>일출</span></td>
+                                            <td><span>검지유형</span></td>
+                                            <td>
+                                                <div class="input_box txt_c">
+                                                    <button class="btn btn_md btn_secondary_outline dis_ib">알람 ON 예외</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+    
+                                        <tr>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>일몰</span></td>
+                                            <td><span>검지유형</span></td>
+                                            <td>
+                                                <div class="input_box txt_c">
+                                                    <button class="btn btn_md btn_secondary_outline dis_ib">알람 ON 예외</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+    
+                                        <tr>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>주간</span></td>
+                                            <td><span>검지유형</span></td>
+                                            <td>
+                                                <div class="input_box txt_c">
+                                                    <button class="btn btn_md btn_secondary_outline dis_ib">알람 ON 예외</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+    
+                                        <tr>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>야간</span></td>
+                                            <td><span>검지유형</span></td>
+                                            <td>
+                                                <div class="input_box txt_c">
+                                                    <button class="btn btn_md btn_secondary_outline dis_ib">알람 ON 예외</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+    
+                                        <tr>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>일출</span></td>
+                                            <td><span>검지유형</span></td>
+                                            <td>
+                                                <div class="input_box txt_c">
+                                                    <button class="btn btn_md btn_secondary_outline dis_ib">알람 ON 예외</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+    
+                                        <tr>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>일몰</span></td>
+                                            <td><span>검지유형</span></td>
+                                            <td>
+                                                <div class="input_box txt_c">
+                                                    <button class="btn btn_md btn_secondary_outline dis_ib">알람 ON 예외</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+    
+                                        <tr>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>주간</span></td>
+                                            <td><span>검지유형</span></td>
+                                            <td>
+                                                <div class="input_box txt_c">
+                                                    <button class="btn btn_md btn_secondary_outline dis_ib">알람 ON 예외</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+    
+                                        <tr>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>야간</span></td>
+                                            <td><span>검지유형</span></td>
+                                            <td>
+                                                <div class="input_box txt_c">
+                                                    <button class="btn btn_md btn_secondary_outline dis_ib">알람 ON 예외</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+    
+                                        <tr>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>일출</span></td>
+                                            <td><span>검지유형</span></td>
+                                            <td>
+                                                <div class="input_box txt_c">
+                                                    <button class="btn btn_md btn_secondary_outline dis_ib">알람 ON 예외</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+    
+                                        <tr>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>일몰</span></td>
+                                            <td><span>검지유형</span></td>
+                                            <td>
+                                                <div class="input_box txt_c">
+                                                    <button class="btn btn_md btn_secondary_outline dis_ib">알람 ON 예외</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+    
+                                        <tr>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>00-00 (월) 00:00:00</span></td>
+                                            <td><span>주간</span></td>
+                                            <td><span>검지유형</span></td>
+                                            <td>
+                                                <div class="input_box txt_c">
+                                                    <button class="btn btn_md btn_secondary_outline dis_ib">알람 ON 예외</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+    
+                            </div>
+    
+                        </div>
+                        <!-- 알람On 예외처리 테이블 -->
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <!-- // 팝업 -->
+    </div>
+
+    <script>
+        (function($){
+            $(window).on("load",function(){
+                $(".scroll_box").mCustomScrollbar({
+                    theme : "minimal-dark"
+                });
+            });
+        })(jQuery);
+    </script>
+</body>
+</html>

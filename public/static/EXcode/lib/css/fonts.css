@@ -1,0 +1,102 @@
+/* noto-sans-kr - kor */
+/* noto-sans-kr-100 - latin */
+@font-face {
+    font-family: 'NotoSansKR';
+    font-style: normal;
+    font-weight: 100;
+    src: url('./fonts/NotoSansCJKkr/NotoSansKR-Thin.otf') format('opentype'),
+         url('./fonts/NotoSansCJKkr/NotoSansKR-Thin.woff2') format('woff2'), /* Super Modern Browsers */
+         url('./fonts/NotoSansCJKkr/NotoSansKR-Thin.woff') format('woff'); /* Modern Browsers */
+    
+  }
+  /* noto-sans-kr-300 - latin */
+  @font-face {
+    font-family: 'NotoSansKR';
+    font-style: normal;
+    font-weight: 300;
+    src: url('./fonts/NotoSansCJKkr/NotoSansKR-Light.otf') format('opentype'),
+         url('./fonts/NotoSansCJKkr/NotoSansKR-Light.woff2') format('woff2'), /* Super Modern Browsers */
+         url('./fonts/NotoSansCJKkr/NotoSansKR-Light.woff') format('woff'); /* Modern Browsers */
+    
+  }
+  /* noto-sans-kr-regular - latin */
+  @font-face {
+    font-family: 'NotoSansKR';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./fonts/NotoSansCJKkr/NotoSansKR-Regular.otf') format('opentype'),
+         url('./fonts/NotoSansCJKkr/NotoSansKR-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('./fonts/NotoSansCJKkr/NotoSansKR-Regular.woff') format('woff'); /* Modern Browsers */
+    
+  }
+  /* noto-sans-kr-500 - latin */
+  @font-face {
+    font-family: 'NotoSansKR';
+    font-style: normal;
+    font-weight: 500;
+    src: url('./fonts/NotoSansCJKkr/NotoSansKR-Medium.otf') format('opentype'),
+         url('./fonts/NotoSansCJKkr/NotoSansKR-Medium.woff2') format('woff2'), /* Super Modern Browsers */
+         url('./fonts/NotoSansCJKkr/NotoSansKR-Medium.woff') format('woff'); /* Modern Browsers */
+    
+  }
+  /* noto-sans-kr-700 - latin */
+  @font-face {
+    font-family: 'NotoSansKR';
+    font-style: normal;
+    font-weight: 700;
+    src: url('./fonts/NotoSansCJKkr/NotoSansKR-Bold.otf') format('opentype'),
+         url('./fonts/NotoSansCJKkr/NotoSansKR-Bold.woff2') format('woff2'), /* Super Modern Browsers */
+         url('./fonts/NotoSansCJKkr/NotoSansKR-Bold.woff') format('woff'); /* Modern Browsers */
+    
+  }
+  /* noto-sans-kr-900 - latin */
+  @font-face {
+    font-family: 'NotoSansKR';
+    font-style: normal;
+    font-weight: 900;
+    src: url('./fonts/NotoSansCJKkr/NotoSansKR-Black.otf') format('opentype'),
+         url('./fonts/NotoSansCJKkr/NotoSansKR-Black.woff2') format('woff2'), /* Super Modern Browsers */
+         url('./fonts/NotoSansCJKkr/NotoSansKR-Black.woff') format('woff'); /* Modern Browsers */
+    
+  }
+  
+  /* NanumBarunGothic-regular */
+  @font-face {
+     font-family: 'NanumBarunG';
+     font-style: normal;
+     font-weight: 200;
+     src:url('./fonts/nanumbarungothic/NanumBarunGothicUltraLightSubset.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+          url('./fonts/nanumbarungothic/NanumBarunGothicUltraLightSubset.woff2') format('woff2'), /* Super Modern Browsers */
+          url('./fonts/nanumbarungothic/NanumBarunGothicUltraLightSubset.woff') format('woff'), /* Modern Browsers */
+          url('./fonts/nanumbarungothic/NanumBarunGothicUltraLightSubset.ttf') format('truetype');/* Safari, Android, iOS */
+   }  
+   /* NanumBarunGothic-regular */
+   @font-face {
+      font-family: 'NanumBarunG';
+      font-style: normal;
+      font-weight: 300;
+      src: url('./fonts/nanumbarungothic/NanumBarunGothicLight.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+           url('./fonts/nanumbarungothic/NanumBarunGothicLight.woff2') format('woff2'), /* Super Modern Browsers */
+           url('./fonts/nanumbarungothic/NanumBarunGothicLight.woff') format('woff'), /* Modern Browsers */
+           url('./fonts/nanumbarungothic/NanumBarunGothicLight.ttf') format('truetype');/* Safari, Android, iOS */
+    }  
+    /* NanumBarunGothic-regular */
+    @font-face {
+       font-family: 'NanumBarunG';
+       font-style: normal;
+       font-weight: 400;
+       src: url('./fonts/nanumbarungothic/NanumBarunGothicSubset.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+            url('./fonts/nanumbarungothic/NanumBarunGothicSubset.woff2') format('woff2'), /* Super Modern Browsers */
+            url('./fonts/nanumbarungothic/NanumBarunGothicSubset.woff') format('woff'), /* Modern Browsers */
+            url('./fonts/nanumbarungothic/NanumBarunGothicSubset.ttf') format('truetype');/* Safari, Android, iOS */
+     }  
+     /* NanumBarunGothic-regular */
+     @font-face {
+        font-family: 'NanumBarunG';
+        font-style: normal;
+        font-weight: 700;
+        src: url('./fonts/nanumbarungothic/NanumBarunGothicBoldSubset.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+             url('./fonts/nanumbarungothic/NanumBarunGothicBoldSubset.woff2') format('woff2'), /* Super Modern Browsers */
+             url('./fonts/nanumbarungothic/NanumBarunGothicBoldSubset.woff') format('woff'), /* Modern Browsers */
+             url('./fonts/nanumbarungothic/NanumBarunGothicBoldSubset.ttf') format('truetype');/* Safari, Android, iOS */
+      }

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="../../lib/js/jQuery1.7.min.js"></script>
+    <script src="../../lib/js/plugin/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <link rel="stylesheet" href="../../lib/js/plugin/mCustomScrollbar/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="../../lib/css/reset.css">
+    <link rel="stylesheet" href="../../lib/css/fonts.css">
+    <link rel="stylesheet" href="../../lib/css/common.css">
+    <link rel="stylesheet" href="../../lib/css/style.css">
+</head>
+<body>
+    <div class="wrap">
+       <!-- header -->
+        <header class="header">
+
+           <div class="inner">
+               
+                <h1 class="logo">
+                    <img src="../../static/images/ic_logo.png" alt="">
+                </h1>
+
+                <div class="hd_right">
+
+                    <div class="input_box">
+                        <select name="" id="" class="select select_lg">
+                            <option value="">서울청</option>
+                            <option value="">경기청</option>
+                        </select>
+                    </div>    
+
+                    <span class="user_name">홍길동님</span>
+
+                    <div class="input_box">
+                        <button class="btn btn_sm btn_secondary">로그아웃</button>
+                    </div>    
+                </div>
+
+            </div>
+       </header> 
+       <!-- // header -->
+
+       <!-- left_nav -->
+       <aside class="left_nav">
+
+           <nav>
+                <div class="nav_box left_box">
+                    <a href="javascript:void(0)" class="nav_item"><img src="../../static/images/ic_dashboard.png" alt=""></a>
+                    <a href="javascript:void(0)" class="nav_item"><img src="../../static/images/ic_event.png" alt=""></a>
+                    <a href="javascript:void(0)" class="nav_item"><img src="../../static/images/ic_circle.png" alt=""></a>
+                    <a href="javascript:void(0)" class="nav_item"><img src="../../static/images/ic_cctv.png" alt=""></a>
+                    <a href="javascript:void(0)" class="nav_item"><img src="../../static/images/ic_assignment.png" alt=""></a>
+                    <a href="javascript:void(0)" class="nav_item"><img src="../../static/images/ic_settings.png" alt=""></a>
+                </div>
+                <!-- 현재 진입해있는 페이지의 menu_box > nav_item에 클래스명 active  -->
+                <div class="nav_box menu_box">
+                    <a href="javascript:void(0)" class="nav_item">현황판</a>
+                    <a href="javascript:void(0)" class="nav_item">이벤트</a>
+                    <a href="javascript:void(0)" class="nav_item active">통계</a>
+                    <a href="javascript:void(0)" class="nav_item">CCTV</a>
+                    <a href="javascript:void(0)" class="nav_item">이력</a>
+                    <a href="javascript:void(0)" class="nav_item">설정</a>
+                </div>
+           </nav>
+
+       </aside>
+       <!-- // left_nav -->
+
+        <!-- container -->
+        <div class="container statistics">
+            <div class="inner">
+                <div class="input_group top_box">
+                    <div class="input_box">
+                        <select class="select">
+                            <option>검지정확도</option>
+                        </select>
+                    </div>
+                    <div class="input_box">
+                        <select class="select">
+                            <option>CCTV 전체</option>
+                        </select>
+                    </div>
+                    <div class="input_box">
+                        <input type="text" class="input_txt">
+                    </div>
+                    <div class="input_box">
+                        <input type="text" class="input_txt">
+                    </div>
+                    <div class="input_box">
+                        <button class="btn btn_md btn_primary">검색</button>
+                    </div>
+                    <div class="input_box">
+                        <button class="btn btn_md btn_secondary">Excel 저장</button>
+                    </div>
+                </div>
+                <!-- graph_box -->
+                <!-- graph_bd 클래스 내분에 플러그인 넣으시면 됩니다. -->
+                <!-- 박스가 2개일 경우 graph_helf_box 로 감싸 사용하시면 됩니다. -->
+                <div class="graph_helf_box">
+                    <div class="graph_box">
+                        <h5 class="graph_tit">1차 검지정확도</h5>
+                        <div class="graph_cont">
+                            <div class="graph_bd"></div>
+                        </div>
+                    </div>
+                    <div class="graph_box">
+                        <h5 class="graph_tit">1차검지 정확도</h5>
+                        <div class="graph_cont">
+                            <div class="graph_bd"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="graph_helf_box">
+                    <div class="graph_box">
+                        <h5 class="graph_tit">2차 검지정확도</h5>
+                        <div class="graph_cont">
+                            <div class="graph_bd"></div>
+                        </div>
+                    </div>
+                    <div class="graph_box">
+                        <h5 class="graph_tit">2차검지 정확도</h5>
+                        <div class="graph_cont">
+                            <div class="graph_bd"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 박스가 3개일 경우 graph_third_box 로 감싸 사용하시면 됩니다. -->
+                <div class="graph_third_box">
+                    <div class="graph_box">
+                        <h5 class="graph_tit">2차 검지정확도</h5>
+                        <div class="graph_cont">
+                            <div class="graph_bd"></div>
+                        </div>
+                    </div>
+                    <div class="graph_box">
+                        <h5 class="graph_tit">2차검지 정확도</h5>
+                        <div class="graph_cont">
+                            <div class="graph_bd"></div>
+                        </div>
+                    </div>
+                    <div class="graph_box">
+                        <h5 class="graph_tit">2차검지 정확도</h5>
+                        <div class="graph_cont">
+                            <div class="graph_bd"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- // graph_box -->
+
+            </div>
+
+        </div>
+        <!-- container -->
+    </div>
+    <script>
+        (function($){
+            $(window).on("load",function(){
+                $(".fixed_table_box .table_bd").mCustomScrollbar({
+                    theme : "minimal-dark"
+                });
+            });
+        })(jQuery);
+    </script>
+</body>
+</html>

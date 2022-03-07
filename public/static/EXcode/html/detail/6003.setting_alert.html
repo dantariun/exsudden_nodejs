@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="../../lib/js/jQuery1.7.min.js"></script>
+    <script src="../../lib/js/plugin/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <link rel="stylesheet" href="../../lib/js/plugin/mCustomScrollbar/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="../../lib/css/reset.css">
+    <link rel="stylesheet" href="../../lib/css/fonts.css">
+    <link rel="stylesheet" href="../../lib/css/common.css">
+    <link rel="stylesheet" href="../../lib/css/style.css">
+</head>
+<body>
+    <div class="wrap">
+       <!-- header -->
+        <header class="header">
+
+           <div class="inner">
+               
+                <h1 class="logo">
+                    <img src="../../static/images/ic_logo.png" alt="">
+                </h1>
+
+                <div class="hd_right">
+
+                    <div class="input_box">
+                        <select name="" id="" class="select select_lg">
+                            <option value="">서울청</option>
+                            <option value="">경기청</option>
+                        </select>
+                    </div>    
+
+                    <span class="user_name">홍길동님</span>
+
+                    <div class="input_box">
+                        <button class="btn btn_sm btn_secondary">로그아웃</button>
+                    </div>    
+                </div>
+
+            </div>
+       </header> 
+       <!-- // header -->
+
+       <!-- left_nav -->
+       <aside class="left_nav">
+
+           <nav>
+                <div class="nav_box left_box">
+                    <a href="javascript:void(0)" class="nav_item"><img src="../../static/images/ic_dashboard.png" alt=""></a>
+                    <a href="javascript:void(0)" class="nav_item"><img src="../../static/images/ic_event.png" alt=""></a>
+                    <a href="javascript:void(0)" class="nav_item"><img src="../../static/images/ic_circle.png" alt=""></a>
+                    <a href="javascript:void(0)" class="nav_item"><img src="../../static/images/ic_cctv.png" alt=""></a>
+                    <a href="javascript:void(0)" class="nav_item"><img src="../../static/images/ic_assignment.png" alt=""></a>
+                    <a href="javascript:void(0)" class="nav_item"><img src="../../static/images/ic_settings.png" alt=""></a>
+                </div>
+                <!-- 현재 진입해있는 페이지의 menu_box > nav_item에 클래스명 active  -->
+                <div class="nav_box menu_box">
+                    <a href="javascript:void(0)" class="nav_item">현황판</a>
+                    <a href="javascript:void(0)" class="nav_item">이벤트</a>
+                    <a href="javascript:void(0)" class="nav_item">통계</a>
+                    <a href="javascript:void(0)" class="nav_item">CCTV</a>
+                    <a href="javascript:void(0)" class="nav_item">이력</a>
+                    <a href="javascript:void(0)" class="nav_item active">설정</a>
+                </div>
+           </nav>
+
+       </aside>
+       <!-- // left_nav -->
+
+       <!-- container -->
+       <div class="container setting">
+
+           <div class="inner">
+
+                <!-- tab_item 클릭시 active 클래스 토글되는 형태입니다 -->
+                <!-- tab_menu -->
+                <div class="tab_box type-a">
+                    <ul>
+                        <li class="tab_item"><span>야간시간대 설정</span></li>
+                        <li class="tab_item active"><span>이벤트 항목 설정</span></li>
+                        <li class="tab_item"><span>날씨정보 매핑</span></li>
+                    </ul>
+                </div>
+                <!-- //tab_menu -->
+
+                <!-- content_box left -->
+                <div class="content_box left">
+
+                    <!-- tab_item 클릭시 active 클래스 토글되는 형태입니다 -->
+                    <!-- tab_menu -->
+                    <div class="tab_box type-b">
+                        <ul>
+                            <li class="tab_item active"><span>점검지</span></li>
+                            <li class="tab_item"><span>오검지</span></li>
+                            <li class="tab_item"><span>환경요소</span></li>
+                        </ul>
+                    </div>
+                    <!-- //tab_menu -->
+
+                    <div class="tab_cont_box">
+                        <div class="tab_cont_item">
+                            <span class="tab_item_tit">유형</span>
+                            <div class="input_box">
+                                <select name="" id="" class="select">
+                                    <option value="">정지 차량</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="tab_cont_item">
+                            <span class="tab_item_tit">세부유형명</span>
+                            <div class="input_box">
+                                <input type="text" class="input_txt">
+                            </div>
+                        </div>
+                        <div class="tab_cont_item">
+                            <span class="tab_item_tit">코드</span>
+                            <div class="input_box">
+                                <input type="text" class="input_txt" placeholder="2자리의 코드를 숫자로 입력하세요 00~99">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input_box txt_c">
+                        <button class="btn btn_smd btn_primary">조건 저장</button>
+                    </div>
+                </div>
+                <!-- // content_box left -->
+
+                <!-- content_box right -->
+                <div class="content_box right">
+                    <div class="fixed_table_box">
+                        <div class="table_hd">
+                            <!-- 헤더고정 테이블의 경우 헤더와 바디 두개의 테이블의 colgroup 선언을 동일하게 해주세요. -->
+                            <table>
+                                <colgroup>
+                                    <col class="w10p">
+                                    <col class="w90p">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <span>번호</span>
+                                        </td>
+                                        <td>
+                                            <span>항목명</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                        <div class="table_bd scroll_box">
+
+                            <table>
+                                <colgroup>
+                                    <col class="w10p">
+                                    <col class="w90p">
+                                </colgroup>
+                                <tbody>
+                                    <!-- 데이터가 없는 경우 아래 텍스트를 출력하고, 모든 셀은 한줄로 통일합니다. -->
+                                    <tr>
+                                        <td colspan="2">
+                                            <span>조건에 부합하는 데이터가 존재하지 않습니다.</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+
+                    </div>
+                </div>
+                <!-- // content_box right -->
+
+           </div>
+
+       </div>
+       <!-- container -->
+              <!-- alert 은 popup 보다 위에 떠있는 형태입니다. (z-index가 더 높음) -->
+        <!-- alert -->
+        <div class="alert_wrap hidden">
+            <div class="alert_box">
+                <div class="alert_hd">
+                    <p class="alert_title">확인</p>
+                    <a href="javascript:void(0)" class="btn_alert_close"><img src="../../static/images/ic_close.png" alt=""></a>
+                </div>
+                <div class="alert_bd">
+                    <div class="alert_desc_box">
+                        <p>해당 세부유형을 삭제시 문제가 될 수 있습니다.</p>
+                        <p>정말 삭제하시겠습니까?</p>
+                        <div class="input_box">
+                            <!-- 버튼의 수에 따라 button 태그를 늘리고 줄이시면 됩니다. -->
+                            <button class="btn btn_primary btn_smd">확인</button>
+                            <button class="btn btn_primary_outline btn_smd">취소</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="alert_wrap hidden">
+            <div class="alert_box">
+                <div class="alert_hd">
+                    <p class="alert_title">경고</p>
+                    <a href="javascript:void(0)" class="btn_alert_close"><img src="../../static/images/ic_close.png" alt=""></a>
+                </div>
+                <div class="alert_bd">
+                    <!-- 버튼이 없는 얼럿의 경우 non_btn 클래스 추가하시면 됩니다. -->
+                    <div class="alert_desc_box non_btn">
+                        <p>중복된 세부유형명을 입력하실 수 없습니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="alert_wrap">
+            <div class="alert_box">
+                <div class="alert_hd">
+                    <p class="alert_title">경고</p>
+                    <a href="javascript:void(0)" class="btn_alert_close"><img src="../../static/images/ic_close.png" alt=""></a>
+                </div>
+                <div class="alert_bd">
+                    <!-- 버튼이 없는 얼럿의 경우 non_btn 클래스 추가하시면 됩니다. -->
+                    <div class="alert_desc_box non_btn">
+                        <p>중복된 코드를 입력하실 수 없습니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //alert -->
+    </div>
+    <script>
+        (function($){
+            $(window).on("load",function(){
+                $(".fixed_table_box .table_bd").mCustomScrollbar({
+                    theme : "minimal-dark"
+                });
+            });
+        })(jQuery);
+    </script>
+</body>
+</html>
